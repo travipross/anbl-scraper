@@ -3,8 +3,21 @@ import re
 from requests_html import HTMLSession
 
 
-def update_product_with_metadata(html_session, product):
-    r = html_session.get(product.get("url"))
+def update_product_with_metadata(html_session, product, max_attempts=5):
+    # try up to 5 times to load the product page
+    attempt = 0
+    while True:
+        if attempt > max_attempts:
+            print("ERROR LOADING PAGE: %s" % product["name"])
+            return False  # could not get web page / read any data
+        attempt = attempt + 1
+        try:
+            r = html_session.get(product.get("url"))
+            break
+        except ConnectionResetError:
+            continue
+
+    # preset return flag
     success = True
 
     # get abv
@@ -68,7 +81,6 @@ def update_product_with_metadata(html_session, product):
          "price_regular": price_regular,
          "ml_alc_per_dollar": ml_alcohol_per_dollar,
          "ml_alc_per_dollar_sale": ml_alcohol_per_dollar_sale}
-
     product.update(d)
 
     return success
@@ -82,7 +94,7 @@ with open(results_json) as f:
 # run single example
 session = HTMLSession()
 sample_product = data["product_categories"][0]["product"][0]
-# update_product_with_metadata(session,sample_product)
+update_product_with_metadata(session,sample_product)
 
 n = 0
 for category in data["product_categories"]:
