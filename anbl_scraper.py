@@ -121,7 +121,7 @@ workers_list = []
 for i in range(max_workers):
     workers_list.append(Thread(target=url_scraper_worker, args=(q,)))
     workers_list[i].start()
-    print("Started worker %d" % i+1)
+    print("Started worker %d" % (i+1))
 
 # save new results to disk every 5 seconds
 output_name = "parsed_data.json"
