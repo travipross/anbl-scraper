@@ -91,11 +91,8 @@ results_json = "run_results.json"
 with open(results_json) as f:
     data = json.load(f)
 
-# run single example
+# loop over all products and output to disk
 session = HTMLSession()
-sample_product = data["product_categories"][0]["product"][0]
-update_product_with_metadata(session,sample_product)
-
 n = 0
 for category in data["product_categories"]:
     print("Parsing all products in [%s] category..." % category["name"])
@@ -109,4 +106,4 @@ output_name = "parsed_data.json"
 
 # save new results to disk
 with open(output_name, 'w') as f:
-    json.dump(data, f)
+    json.dump(data, f, indent=4)
