@@ -47,7 +47,7 @@ def update_product_with_metadata(html_session, product, max_attempts=5):
     # get current price
     try:
         price_current_text = r.html.find(".price-current").pop().text
-        price_current = float(re.search("\$(.+) /UNIT", price_current_text).group(1))
+        price_current = float(re.search("\$(.+) /UNIT", price_current_text).group(1).replace(",", ""))
     except IndexError:
         price_current = None
         success = False
@@ -55,7 +55,7 @@ def update_product_with_metadata(html_session, product, max_attempts=5):
     # get regular price
     try:
         price_regular_text = r.html.find(".price-before-discount").pop().text
-        price_regular = float(re.search("\$(.+)", price_regular_text).group(1))
+        price_regular = float(re.search("\$(.+)", price_regular_text).group(1).replace(",", ""))
     except IndexError:
         price_regular = price_current
 
