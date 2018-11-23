@@ -5,6 +5,8 @@ from requests_html import HTMLSession
 
 def update_product_with_metadata(html_session, product):
     r = html_session.get(product.get("url"))
+    success = True
+
     # get abv
     try:
         abv_text = r.html.find(".information-attribute", containing="Alcohol content").pop().text
@@ -12,6 +14,7 @@ def update_product_with_metadata(html_session, product):
     except IndexError:
         # couldn't find abv on page
         abv = None
+        success = False
 
     # get vol
     try:
@@ -19,6 +22,7 @@ def update_product_with_metadata(html_session, product):
         vol = int(re.search("Container Size : (.+) mL", vol_text).group(1))
     except IndexError:
         vol = None
+        success = False
 
     # get qty
     try:
@@ -33,6 +37,7 @@ def update_product_with_metadata(html_session, product):
         price_current = float(re.search("\$(.+) /UNIT", price_current_text).group(1))
     except IndexError:
         price_current = None
+        success = False
 
     # get regular price
     try:
@@ -46,12 +51,14 @@ def update_product_with_metadata(html_session, product):
         ml_alcohol_per_dollar = float(qty) * float(vol) * (abv/100.0) / price_regular
     except TypeError:
         ml_alcohol_per_dollar = None
+        success = False
 
     # get mL alcohol per dollar (sale)
     try:
         ml_alcohol_per_dollar_sale = float(qty) * float(vol) * (abv/100.0) / price_current
     except TypeError:
         ml_alcohol_per_dollar_sale = None
+        success = False
 
     # update product dict
     d = {"abv": abv,
@@ -64,6 +71,8 @@ def update_product_with_metadata(html_session, product):
 
     product.update(d)
 
+    return success
+
 
 # load json file with results
 results_json = "run_results.json"
@@ -73,4 +82,19 @@ with open(results_json) as f:
 # run single example
 session = HTMLSession()
 sample_product = data["product_categories"][0]["product"][0]
-update_product_with_metadata(session,sample_product)
+# update_product_with_metadata(session,sample_product)
+
+n = 0
+for category in data["product_categories"]:
+    print("Parsing all products in [%s] category..." % category["name"])
+    for product in category["product"]:
+        success = update_product_with_metadata(session, product)
+        print("%d: %s... " % (n, product["name"]), end="")
+        print("Success") if success else print("Some data missing")
+        n = n + 1
+
+output_name = "parsed_data.json"
+
+# save new results to disk
+with open(output_name, 'w') as f:
+    json.dump(data, f)
