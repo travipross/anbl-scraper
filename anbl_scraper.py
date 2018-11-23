@@ -1,6 +1,7 @@
 import json
 import re
 import queue
+import time
 from threading import Thread
 from requests_html import HTMLSession
 
@@ -115,15 +116,16 @@ def url_scraper_worker(q):
         print("Success") if success else print("Some data missing")
 
 
-max_workers = 10
+max_workers = 20
 workers_list = []
 for i in range(max_workers):
     workers_list.append(Thread(target=url_scraper_worker, args=(q,)))
     workers_list[i].start()
-    print("Started worker %d" % i)
+    print("Started worker %d" % i+1)
 
+# save new results to disk every 5 seconds
 output_name = "parsed_data.json"
-
-# save new results to disk
-with open(output_name, 'w') as f:
-    json.dump(data, f, indent=4)
+while not q.empty():
+    with open(output_name, 'w') as f:
+        json.dump(data, f, indent=4)
+    time.sleep(5)
