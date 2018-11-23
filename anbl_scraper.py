@@ -1,5 +1,7 @@
 import json
 import re
+import queue
+from threading import Thread
 from requests_html import HTMLSession
 
 
@@ -91,16 +93,34 @@ results_json = "run_results.json"
 with open(results_json) as f:
     data = json.load(f)
 
+# Initialize a queue object
+q = queue.Queue()
+
 # loop over all products and output to disk
-session = HTMLSession()
 n = 0
 for category in data["product_categories"]:
-    print("Parsing all products in [%s] category..." % category["name"])
-    for product in category["product"]:
+    print("Queueing all products in [%s] category..." % category["name"])
+    for item in category["product"]:
+        q.put([item, n])
+        n = n + 1
+print("%d products queued" % n)
+
+
+def url_scraper_worker(q):
+    session = HTMLSession()
+    while not q.empty():
+        [product, n] = q.get()
         success = update_product_with_metadata(session, product)
         print("%d: %s... " % (n, product["name"]), end="")
         print("Success") if success else print("Some data missing")
-        n = n + 1
+
+
+max_workers = 10
+workers_list = []
+for i in range(max_workers):
+    workers_list.append(Thread(target=url_scraper_worker, args=(q,)))
+    workers_list[i].start()
+    print("Started worker %d" % i)
 
 output_name = "parsed_data.json"
 
