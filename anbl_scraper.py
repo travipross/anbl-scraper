@@ -89,6 +89,15 @@ def update_product_with_metadata(html_session, product, max_attempts=5):
     return success
 
 
+def url_scraper_worker(q):
+    session = HTMLSession()
+    while not q.empty():
+        [product, n] = q.get()
+        success = update_product_with_metadata(session, product)
+        print("%d: %s... " % (n, product["name"]), end="")
+        print("Success") if success else print("Some data missing")
+
+
 # load json file with results
 results_json = "run_results.json"
 with open(results_json) as f:
@@ -106,16 +115,7 @@ for category in data["product_categories"]:
         n = n + 1
 print("%d products queued" % n)
 
-
-def url_scraper_worker(q):
-    session = HTMLSession()
-    while not q.empty():
-        [product, n] = q.get()
-        success = update_product_with_metadata(session, product)
-        print("%d: %s... " % (n, product["name"]), end="")
-        print("Success") if success else print("Some data missing")
-
-
+# start url scraper workers
 max_workers = 20
 workers_list = []
 for i in range(max_workers):
@@ -129,3 +129,5 @@ while not q.empty():
     with open(output_name, 'w') as f:
         json.dump(data, f, indent=4)
     time.sleep(5)
+
+print("Results saved to %s" % output_name)
