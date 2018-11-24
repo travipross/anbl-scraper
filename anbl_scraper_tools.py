@@ -85,14 +85,18 @@ def update_product_with_metadata(html_session, product, max_attempts=5):
     return success
 
 
-def url_scraper_worker(q, worker_num):
-    print("Worker %d started." % worker_num)
+def url_scraper_worker(q, worker_num, stats):
+    print("worker%d started." % worker_num)
     session = HTMLSession()
     while True:
         [product, n] = q.get()
         if product is None or n is None:
             break
         success = update_product_with_metadata(session, product)
-        print("%4d: %s... " % (n, (product["name"][:73]+"."*75)[:75]), end="")
-        print("Success") if success else print("Some data missing")
+        print("%4d)%4d: %s... " % (worker_num, n, (product["name"][:73]+"."*75)[:75]), end="")
+        if success:
+            print("Success")
+        else:
+            print("Some data missing")
+            stats["failed"] = stats["failed"] + 1
     print("Worker %d finished." % worker_num)

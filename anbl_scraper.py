@@ -7,8 +7,10 @@ from anbl_converter import anbl_csv_writer
 
 AUTOSAVE = False
 STATUS_PERIOD = 5
+N_WORKERS = 100
 results_json = "run_results.json"
 output_name = "parsed_data"
+stats = {"failed": 0}
 
 # load json file with results
 with open(results_json) as f:
@@ -25,11 +27,10 @@ for category in data["product_categories"]:
 print("%d products queued" % n)
 
 # start url scraper workers
-n_workers = 400
 workers_list = []
 t_start = time.time()
-for i in range(n_workers):
-    workers_list.append(Thread(target=url_scraper_worker, args=(q, i), name="worker%d" % i))
+for i in range(N_WORKERS):
+    workers_list.append(Thread(target=url_scraper_worker, args=(q, i, stats), name="worker%d" % i))
     workers_list[i].start()
     q.put([None, None])
 
@@ -48,9 +49,10 @@ while not q.empty():
 t_end = time.time()
 elapsed = t_end-t_start
 print("-"*80)
-print("Time elapsed: %d seconds" % (elapsed))
+print("%d/%d products had complete data" % ((n - stats["failed"]), n))
+print("Time elapsed: %d seconds" % elapsed)
 print("%.2f pages scraped per minute" % (n/elapsed))
-print("%.2f seconds per page per worker" % (elapsed/n*n_workers))
+print("%.2f seconds per page per worker" % (elapsed/n*N_WORKERS))
 
 # join workers and wait for job to finish before saving to disk
 for w in workers_list:
