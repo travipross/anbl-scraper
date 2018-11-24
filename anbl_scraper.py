@@ -4,8 +4,10 @@ import queue
 import time
 from threading import Thread
 from requests_html import HTMLSession
+from anbl_converter import anbl_csv_writer
 
 AUTOSAVE = False
+
 
 def update_product_with_metadata(html_session, product, max_attempts=5):
     # try up to 5 times to load the product page
@@ -129,7 +131,7 @@ for i in range(n_workers):
     q.put([None, None])
 
 # optionally save new results to disk every 5 seconds
-output_name = "parsed_data.json"
+output_name = "parsed_data"
 
 while not q.empty():
     if AUTOSAVE:
@@ -145,6 +147,8 @@ for w in workers_list:
     print("Joined thread: %s" % w.name)
 
 # save final results to file
-with open(output_name, 'w') as f:
+with open(output_name+".json", 'w') as f:
     json.dump(data, f, indent=4)
+
+anbl_csv_writer(data, output_name+".csv")
 print("FINISHED")
