@@ -97,7 +97,7 @@ def url_scraper_worker(q, worker_num):
         if product is None or n is None:
             break
         success = update_product_with_metadata(session, product)
-        print("%d: %s... " % (n, product["name"]), end="")
+        print("%4d: %s... " % (n, (product["name"][:73]+"."*75)[:75]), end="")
         print("Success") if success else print("Some data missing")
     print("Worker %d finished." % worker_num)
 
