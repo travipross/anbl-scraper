@@ -89,13 +89,17 @@ def update_product_with_metadata(html_session, product, max_attempts=5):
     return success
 
 
-def url_scraper_worker(q):
+def url_scraper_worker(q, worker_num):
+    print("Worker %d started." % worker_num)
     session = HTMLSession()
-    while not q.empty():
+    while True:
         [product, n] = q.get()
+        if product is None or n is None:
+            break
         success = update_product_with_metadata(session, product)
         print("%d: %s... " % (n, product["name"]), end="")
         print("Success") if success else print("Some data missing")
+    print("Worker %d finished." % worker_num)
 
 
 # load json file with results
@@ -116,18 +120,26 @@ for category in data["product_categories"]:
 print("%d products queued" % n)
 
 # start url scraper workers
-max_workers = 20
+n_workers = 200
 workers_list = []
-for i in range(max_workers):
-    workers_list.append(Thread(target=url_scraper_worker, args=(q,)))
+for i in range(n_workers):
+    workers_list.append(Thread(target=url_scraper_worker, args=(q, i), name="worker%d" % i))
     workers_list[i].start()
-    print("Started worker %d" % (i+1))
+    q.put([None, None])
 
 # save new results to disk every 5 seconds
 output_name = "parsed_data.json"
 while not q.empty():
     with open(output_name, 'w') as f:
         json.dump(data, f, indent=4)
+    print("Results saved to %s" % output_name)
     time.sleep(5)
 
-print("Results saved to %s" % output_name)
+print("QUEUE EMPTY. WAITING FOR THREADS TO FINISH")
+for w in workers_list:
+    w.join()
+    print("Joined thread: %s" % w.name)
+
+with open(output_name, 'w') as f:
+    json.dump(data, f, indent=4)
+print("FINISHED")
