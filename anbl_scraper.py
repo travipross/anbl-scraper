@@ -1,119 +1,21 @@
 import json
-import re
 import queue
 import time
 from threading import Thread
-from requests_html import HTMLSession
+from anbl_scraper_tools import url_scraper_worker
 from anbl_converter import anbl_csv_writer
 
 AUTOSAVE = False
-
-
-def update_product_with_metadata(html_session, product, max_attempts=5):
-    # try up to 5 times to load the product page
-    attempt = 0
-    while True:
-        if attempt > max_attempts:
-            print("ERROR LOADING PAGE: %s" % product["name"])
-            return False  # could not get web page / read any data
-        attempt = attempt + 1
-        try:
-            r = html_session.get(product.get("url"))
-            break
-        except ConnectionResetError:
-            continue
-
-    # preset return flag
-    success = True
-
-    # get abv
-    try:
-        abv_text = r.html.find(".information-attribute", containing="Alcohol content").pop().text
-        abv = float(re.search("Alcohol content : (.+)%", abv_text).group(1))
-    except IndexError:
-        # couldn't find abv on page
-        abv = None
-        success = False
-
-    # get vol
-    try:
-        vol_text = r.html.find(".information-attribute", containing="Container Size").pop().text
-        vol = int(re.search("Container Size : (.+) mL", vol_text).group(1))
-    except IndexError:
-        vol = None
-        success = False
-
-    # get qty
-    try:
-        qty_text = r.html.find(".information-attribute", containing="Quantity per container").pop().text
-        qty = int(re.search("Quantity per container : (.+)", qty_text).group(1))
-    except IndexError:
-        qty = 1
-
-    # get current price
-    try:
-        price_current_text = r.html.find(".price-current").pop().text
-        price_current = float(re.search("\$(.+) /UNIT", price_current_text).group(1).replace(",", ""))
-    except IndexError:
-        price_current = None
-        success = False
-
-    # get regular price
-    try:
-        price_regular_text = r.html.find(".price-before-discount").pop().text
-        price_regular = float(re.search("\$(.+)", price_regular_text).group(1).replace(",", ""))
-    except IndexError:
-        price_regular = price_current
-
-    # get mL alcohol per dollar
-    try:
-        ml_alcohol_per_dollar = float(qty) * float(vol) * (abv/100.0) / price_regular
-    except TypeError:
-        ml_alcohol_per_dollar = None
-        success = False
-
-    # get mL alcohol per dollar (sale)
-    try:
-        ml_alcohol_per_dollar_sale = float(qty) * float(vol) * (abv/100.0) / price_current
-    except TypeError:
-        ml_alcohol_per_dollar_sale = None
-        success = False
-
-    # update product dict
-    d = {"abv": abv,
-         "vol_ml": vol,
-         "qty": qty,
-         "price_current": price_current,
-         "price_regular": price_regular,
-         "ml_alc_per_dollar": ml_alcohol_per_dollar,
-         "ml_alc_per_dollar_sale": ml_alcohol_per_dollar_sale}
-    product.update(d)
-
-    return success
-
-
-def url_scraper_worker(q, worker_num):
-    print("Worker %d started." % worker_num)
-    session = HTMLSession()
-    while True:
-        [product, n] = q.get()
-        if product is None or n is None:
-            break
-        success = update_product_with_metadata(session, product)
-        print("%4d: %s... " % (n, (product["name"][:73]+"."*75)[:75]), end="")
-        print("Success") if success else print("Some data missing")
-    print("Worker %d finished." % worker_num)
-
+STATUS_PERIOD = 5
+results_json = "run_results.json"
+output_name = "parsed_data"
 
 # load json file with results
-results_json = "run_results.json"
 with open(results_json) as f:
     data = json.load(f)
 
-# Initialize a queue object
+# put all product dicts into a queue to share between workers
 q = queue.Queue()
-
-# loop over all products and output to disk
 n = 0
 for category in data["product_categories"]:
     print("Queueing all products in [%s] category..." % category["name"])
@@ -131,25 +33,26 @@ for i in range(n_workers):
     workers_list[i].start()
     q.put([None, None])
 
-# optionally save new results to disk every 5 seconds
-output_name = "parsed_data"
-
+# main loop: occasionally print
 while not q.empty():
     print("Items remaining in queue: %d" % q.qsize())
     if q.qsize() <= 10:
-        print([t.name for t in workers_list if t.is_alive()])
+        print("Workers remaining: %s" % [t.name for t in workers_list if t.is_alive()])
     if AUTOSAVE:
         with open(output_name, 'w') as f:
             json.dump(data, f, indent=4)
         print("Results saved to %s" % output_name)
-    time.sleep(5)
+    time.sleep(STATUS_PERIOD)
 
+# print statistics about scraping session
 t_end = time.time()
+elapsed = t_end-t_start
 print("-"*80)
-print("Time elapsed: %d seconds" % (t_end - t_start))
-print("%.2f pages scraped per minute" % (n/(t_end - t_start)))
+print("Time elapsed: %d seconds" % (elapsed))
+print("%.2f pages scraped per minute" % (n/elapsed))
+print("%.2f seconds per page per worker" % (elapsed/n*n_workers))
 
-# join workers and wait for job to finish
+# join workers and wait for job to finish before saving to disk
 for w in workers_list:
     w.join()
 
@@ -158,4 +61,3 @@ with open(output_name+".json", 'w') as f:
     json.dump(data, f, indent=4)
 
 anbl_csv_writer(data, output_name+".csv")
-
