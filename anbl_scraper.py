@@ -5,6 +5,7 @@ import time
 from threading import Thread
 from requests_html import HTMLSession
 
+AUTOSAVE = False
 
 def update_product_with_metadata(html_session, product, max_attempts=5):
     # try up to 5 times to load the product page
@@ -127,19 +128,23 @@ for i in range(n_workers):
     workers_list[i].start()
     q.put([None, None])
 
-# save new results to disk every 5 seconds
+# optionally save new results to disk every 5 seconds
 output_name = "parsed_data.json"
-while not q.empty():
-    with open(output_name, 'w') as f:
-        json.dump(data, f, indent=4)
-    print("Results saved to %s" % output_name)
-    time.sleep(5)
 
+while not q.empty():
+    if AUTOSAVE:
+        with open(output_name, 'w') as f:
+            json.dump(data, f, indent=4)
+        print("Results saved to %s" % output_name)
+    time.sleep(5)
 print("QUEUE EMPTY. WAITING FOR THREADS TO FINISH")
+
+# join workers and wait for job to finish
 for w in workers_list:
     w.join()
     print("Joined thread: %s" % w.name)
 
+# save final results to file
 with open(output_name, 'w') as f:
     json.dump(data, f, indent=4)
 print("FINISHED")
