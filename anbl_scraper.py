@@ -123,8 +123,9 @@ for category in data["product_categories"]:
 print("%d products queued" % n)
 
 # start url scraper workers
-n_workers = 200
+n_workers = 400
 workers_list = []
+t_start = time.time()
 for i in range(n_workers):
     workers_list.append(Thread(target=url_scraper_worker, args=(q, i), name="worker%d" % i))
     workers_list[i].start()
@@ -134,21 +135,27 @@ for i in range(n_workers):
 output_name = "parsed_data"
 
 while not q.empty():
+    print("Items remaining in queue: %d" % q.qsize())
+    if q.qsize() <= 10:
+        print([t.name for t in workers_list if t.is_alive()])
     if AUTOSAVE:
         with open(output_name, 'w') as f:
             json.dump(data, f, indent=4)
         print("Results saved to %s" % output_name)
     time.sleep(5)
-print("QUEUE EMPTY. WAITING FOR THREADS TO FINISH")
+
+t_end = time.time()
+print("-"*80)
+print("Time elapsed: %d seconds" % (t_end - t_start))
+print("%.2f pages scraped per minute" % (n/(t_end - t_start)))
 
 # join workers and wait for job to finish
 for w in workers_list:
     w.join()
-    print("Joined thread: %s" % w.name)
 
 # save final results to file
 with open(output_name+".json", 'w') as f:
     json.dump(data, f, indent=4)
 
 anbl_csv_writer(data, output_name+".csv")
-print("FINISHED")
+
