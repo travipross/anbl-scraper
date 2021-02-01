@@ -1,4 +1,5 @@
-from anbl_scraper.crawl import build_data_payload
+import pytest
+from anbl_scraper.crawl import build_data_payload, get_number_of_pages
 
 def test_form_data():
     data = build_data_payload('cider', 1, 1)
@@ -12,3 +13,10 @@ def test_form_data():
         'displayMode': 'list',
         'widgetUniqueCode': 'SdWlppw1TpFAaFHqsHbZSrnkUDJdN0iIBCSwZrYRytezwBKq8yus4ZC+KiG/Jo/v',
     }
+
+@pytest.mark.parametrize(
+    "page_size, n_prods, n_pages",
+    [(24, 100, 5), (25, 100, 4), (26, 100, 4)]
+)
+def test_num_pages(page_size, n_prods, n_pages):
+    assert n_pages == get_number_of_pages(n_prods, page_size) 
