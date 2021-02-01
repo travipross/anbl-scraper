@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.anbl.com/alpine-lager-12-b-10965 -->
+<html lang="en" style="" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths wf-fontawesome-n4-active wf-active"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Alpine Lager 12 B</title>
+    <meta name="description" content="Alpine Lager 12 B">
+      <meta name="keywords" content="Alpine Lager 12 B">
+  
+  <meta content="True" name="HandheldFriendly">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+   
+  <link rel="stylesheet" type="text/css" href="./sample-page_files/widget110.css"><link rel="stylesheet" href="./sample-page_files/cssinclude.bdl"><link rel="stylesheet" href="./sample-page_files/cssinclude(1).bdl">
+
+  <!--[if IE 8]><!--><script async="" src="./sample-page_files/analytics.js"></script><script async="" src="./sample-page_files/fbevents.js"></script><script async="" src="./sample-page_files/gtm.js"></script><script src="./sample-page_files/webfontloader.js"></script><script src="./sample-page_files/html5shiv.js"></script><!--<![endif]--><script src="./sample-page_files/jsinclude.bdl"></script><script src="./sample-page_files/jsinclude(1).bdl"></script>
+
+  <script type="text/javascript">var _sCurrentLanguage="en";var _sDefaultLanguage="en-US";var _sCurrentLanguageFull="en-us";var _sServerDomain=""</script>
+
+  
+
+  
+
+  <script src="./sample-page_files/2041daba9d.js"></script>
+  <script type="text/javascript">
+    bAjaxDone = true; //ON LOAD, SETS THE AJAX/LOADING COMPLETED
+
+    function onLoadScripts() {
+      $("h2, h3").each(function () {
+        if ($(this).find(".h2TitleContainer").length == 0) {
+          $(this).wrapInner('<div class="h2TitleContainer"></div>');
+        }
+      });
+
+      $(".dropdown-menu.addtopurchaselist-multiple").removeClass("addtopurchaselist-multiple");
+    }
+
+    $(document).ajaxStart(function () {
+      bAjaxDone = false; //WHEN AJAX CALL STARTS, SET THAT IT IS NOT COMPLETED
+    });
+
+    $(document).ajaxComplete(function () {
+      if (bAjaxDone == false) {
+        bAjaxDone = true; //BECAUSE THE AJAXCOMPLETE GETS CALLED TWICE, THIS FLAGS ALLOWS TO RUN SCRIPTS ONCE.
+        onLoadScripts();
+      }
+    });
+
+    //WHEN CLICKING ON THE FOOTER BUTTONS, SETS THE COOKIE ACCORDINGLY
+    function _changeMobileView(sNextView){
+    
+      if(sNextView == "mobile"){
+        Utils.setCookie("kMobileAsDesktop", "false", 365);
+      }
+      else{
+        Utils.setCookie("kMobileAsDesktop", "true", 365);
+      }
+      
+      // RELOADS THE PAGE TO READ THE NEW COOKIE INFORMATION
+      window.location = window.location.href;
+    }
+
+    $(document).ready(function(){
+        onLoadScripts();
+        $("#categoryDescription + .ejs-category-banner").prependTo("#ejs-main-section");
+
+// REACTIVATES THE DROPDOWN ON CLICK ON SMALLER DEVICES OR WHEN VIEWING THE WEBSITE AS DESKTOP ON MOBILE
+       if(Modernizr.mq('(max-width: 979px)')){
+          $(".expand.dropdown.ejs-firstLevelLink > a").addClass("dropdown-toggle").attr("data-toggle", "dropdown");
+        }
+    
+      // BINDS EVENTS TO THE FOOTER BUTTONS
+      $(".ejs-mobileViewMobile").click(function(){
+        _changeMobileView('mobile');
+      });
+      $(".ejs-mobileViewDesktop").click(function(){
+        _changeMobileView('desktop');
+      });
+      
+      // CHECKS FOR THE SCREEN RESOLUTION ON LOADING
+      if(Modernizr.mq('(max-width: 768px)')){
+        
+        if(Utils.getCookie("kMobileAsDesktop") == "true"){
+          // IF THE COOKIE IS TRUE TO SHOW MOBILE AS DESKTOP, SETS THE VIEWPORT AND SHOWS THE BUTTON TO SWITCH TO MOBILE
+          $('meta[name="viewport"]').prop('content', 'width=1440');
+          $('.ejs-mobileViewMobile').show();
+          $('.ejs-mobileViewDesktop').hide();
+        }
+        else{
+          // IF THE COOKIE IS TRUE TO SHOW MOBILE AS NORMAL, SHOWS THE BUTTON TO SWITCH TO DESKTOP VIEW
+          $('.ejs-mobileViewMobile').hide();
+          $('.ejs-mobileViewDesktop').show();
+        }
+        
+        // SHOWS THE BUTTON CONTAINER IN THE FOOTER
+        $("body.viewMobileAsDesktop").show();
+        $(".ejs-footerMobileSwitch").show();
+      }
+    });
+  </script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+"https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KJQSVHR');</script>
+<!-- End Google Tag Manager -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJQSVHR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1403515263123816');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1403515263123816&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code --><link rel="stylesheet" href="./sample-page_files/2041daba9d.css" media="all">
+
+</head>
+<body>
+  <div class="sb-site-container">
+    <div class="widget" data-type="layout" data-index="1">
+      
+    </div>
+		<div class="main-section-container container">
+			<div class="widget" data-type="layout" data-index="2">
+				
+<script type="text/javascript">
+
+  $(document).ready(function () {        
+    Header.init(true, 3, "Product", "Products");
+    ShoppingCartSummary.DesktopAutoCloseCartPopupDelay = 5000 ;
+    ShoppingCartSummary.MobileAutoCloseCartPopupDelay = 5000 ;
+    $('.nav-myaccount .dropdown-toggle').dropdown();
+  });
+
+</script>
+<header>
+  <div class="container">
+    <!-- HEADER LINKS -->
+    <div class="row-fluid favorite-store-align">
+      <div class="span4">
+        <ul class="inline header-social">
+    <li>
+    <a href="https://www.facebook.com/ANBL/" target="_blank"><span class="fa fa-facebook-square" aria-hidden="true"></span></a>
+    </li>
+    <li>
+    <a href="https://twitter.com/ANBL_ENG" target="_blank"><span class="fa fa-twitter-square" aria-hidden="true"></span></a>
+    </li>
+    <li>
+    <a href="https://www.instagram.com/ANBL/" target="_blank"><span class="fa fa-instagram" aria-hidden="true"></span></a>
+    </li>
+    <li>
+    <a href="https://www.linkedin.com/company/alcool-nb-liquor?trk=top_nav_home" target="_blank"><span class="fa fa-linkedin-square" aria-hidden="true"></span></a>
+    </li>
+    <li class="findstorelink">
+    <a title="Find Your Store" href="https://www.anbl.com/stores">Find Your Store</a>
+    </li>
+</ul>
+
+          <div class="visible-phone mobile-logo">
+            <a href="https://www.anbl.com/" title="Alcool NB Liquor">
+              <img src="./sample-page_files/logo-medium.png" alt="Alcool NB Liquor" title="Alcool NB Liquor" class="hires">
+            </a>
+          </div>
+
+          <!-- SEARCH -->
+          <div class="search">
+            <div class="row-fluid">
+              <form class="form-search ejs-quicksearch form-inline" action="https://www.anbl.com/products-search" method="get" onsubmit="SearchAsType.PreventAjaxCall();" novalidate="novalidate">
+                <input type="text" name="qs" id="txtHeaderQuickSearch" class="form-search-input" placeholder="Search by Keyword" autocomplete="off">
+                <button class="btn btn-go" type="submit"><i class="fa fa-search fa-inverted" aria-hidden="true"></i></button>
+              </form>
+            </div>
+          </div>
+                  <div class="favorite-store">
+            <div class="favorite-store-bg">
+                <div class="preferredStoreInfo">
+                  <small>My preferred store is  : <strong>Fredericton - Brookside Mall</strong>  <a href="https://www.anbl.com/stores" class="visible-tablet"><i class="fa fa-arrow-circle-right fa-small" aria-hidden="true"></i></a></small>
+                </div>
+                <div class="row-fluid preferredStoreChange hidden-tablet">
+                  <a href="https://www.anbl.com/stores"><small>Change my preferred store</small> <i class="fa fa-arrow-circle-right fa-small" aria-hidden="true"></i></a>
+                </div>
+            </div>
+          </div>
+      </div>
+      <div class="span4 hidden-phone">
+        <div class="logos text-center">
+
+            <a href="https://www.anbl.com/" title="Alcool NB Liquor">
+              <img src="./sample-page_files/logo-medium.png" alt="Alcool NB Liquor" title="Alcool NB Liquor" class="hires">
+            </a>
+        </div>
+      </div>
+      <div class="span4 cart-popup-align">
+
+        <ul class="unstyled inline header-nav">
+          
+            <li class="cult-fr">
+              <a title="Français" href="https://www.anbl.com/fr/alpine-lager-12-b-10965">Français</a>
+            </li>
+            <li class="header-sep">|</li>
+        </ul>
+
+        <!-- CART -->
+
+      </div>
+    </div>
+  </div>
+</header>
+
+			</div>
+			<div class="section-container-main-navigation" style="height: 55px;">
+				<div class="widget" data-type="layout" data-index="3">
+					
+<script type="text/javascript">
+  $(document).ready(function () {
+    Menu.init();
+  });
+</script>
+
+
+  <div class="main-navigation">
+    <div class="container">
+      <div class="navbar navbar-inverse nav-menu">
+        <div class="navbar-inner">
+          <div class="container">
+						<div class="span12 visible-phone">
+							<a class="btn-navbar span1" data-toggle="collapse" data-target=".nav-collapse">
+								<i class="fa fa-bars fa-large fa-inverted" aria-hidden="true"></i>
+							</a>
+						</div>
+						<div class="row-fluid">
+              <div class="nav-collapse collapse span10" role="navigation">
+								<ul class="nav">
+                           <li class="expand dropdown ejs-firstLevelLink">
+                              <a class="lvl1" href="https://www.anbl.com/beer">Beer                                                                                                                                                                                                                                                           <b class="caret"></b></a>
+
+                                <ul class="dropdown-menu level2" role="menu">
+
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Ale                                                                                                                                                                                                                                                            " href="https://www.anbl.com/ale-1" data-url="/ecom/categorypage/d86e8c3a-d7c5-4de5-b707-680b52d90933" tabindex="-1">Ale                                                                                                                                                                                                                                                            </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="American Ales                                                                                                                                                                                                                                                  " href="https://www.anbl.com/american-ales-1" tabindex="-1">American Ales                                                                                                                                                                                                                                                  </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Belgian/French Ales                                                                                                                                                                                                                                            " href="https://www.anbl.com/belgian-french-ales" tabindex="-1">Belgian/French Ales                                                                                                                                                                                                                                            </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="English Ales                                                                                                                                                                                                                                                   " href="https://www.anbl.com/english-ales-1" tabindex="-1">English Ales                                                                                                                                                                                                                                                   </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="German Ales                                                                                                                                                                                                                                                    " href="https://www.anbl.com/german-ales-1" tabindex="-1">German Ales                                                                                                                                                                                                                                                    </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Gift Pack/Multi Pack                                                                                                                                                                                                                                           " href="https://www.anbl.com/gift-pack-multi-pack-3" tabindex="-1">Gift Pack/Multi Pack                                                                                                                                                                                                                                           </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Irish Ales                                                                                                                                                                                                                                                     " href="https://www.anbl.com/irish-ales-1" tabindex="-1">Irish Ales                                                                                                                                                                                                                                                     </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Scottish Ales                                                                                                                                                                                                                                                  " href="https://www.anbl.com/scottish-ales-1" tabindex="-1">Scottish Ales                                                                                                                                                                                                                                                  </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Seasonal/Specialty                                                                                                                                                                                                                                             " href="https://www.anbl.com/seasonal-specialty-6" tabindex="-1">Seasonal/Specialty                                                                                                                                                                                                                                             </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Hybrid                                                                                                                                                                                                                                                         " href="https://www.anbl.com/hybrid-2" data-url="/ecom/categorypage/e8100695-4497-40d9-bbfc-89c3e5627943" tabindex="-1">Hybrid                                                                                                                                                                                                                                                         </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Gift Pack/Multi Pack                                                                                                                                                                                                                                           " href="https://www.anbl.com/gift-pack-multi-pack-1" tabindex="-1">Gift Pack/Multi Pack                                                                                                                                                                                                                                           </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Hybrid Ale/Lager                                                                                                                                                                                                                                               " href="https://www.anbl.com/hybrid-ale-lager" tabindex="-1">Hybrid Ale/Lager                                                                                                                                                                                                                                               </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Lager                                                                                                                                                                                                                                                          " href="https://www.anbl.com/lager" data-url="/ecom/categorypage/871d5a27-10cd-46d7-a157-4ed147c9ac19" tabindex="-1">Lager                                                                                                                                                                                                                                                          </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="American Lagers                                                                                                                                                                                                                                                " href="https://www.anbl.com/american-lagers-1" tabindex="-1">American Lagers                                                                                                                                                                                                                                                </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Czech Lagers                                                                                                                                                                                                                                                   " href="https://www.anbl.com/czech-lagers" tabindex="-1">Czech Lagers                                                                                                                                                                                                                                                   </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="European Lagers                                                                                                                                                                                                                                                " href="https://www.anbl.com/european-lagers-1" tabindex="-1">European Lagers                                                                                                                                                                                                                                                </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="German Lagers                                                                                                                                                                                                                                                  " href="https://www.anbl.com/german-lagers-1" tabindex="-1">German Lagers                                                                                                                                                                                                                                                  </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Gift Pack/Multi Pack                                                                                                                                                                                                                                           " href="https://www.anbl.com/gift-pack-multi-pack" tabindex="-1">Gift Pack/Multi Pack                                                                                                                                                                                                                                           </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Seasonal/Specialty                                                                                                                                                                                                                                             " href="https://www.anbl.com/seasonal-specialty" tabindex="-1">Seasonal/Specialty                                                                                                                                                                                                                                             </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                            </li>
+                           <li class="expand dropdown ejs-firstLevelLink">
+                              <a class="lvl1" href="https://www.anbl.com/wine">Wine                                                                                                                                                                                                                                                           <b class="caret"></b></a>
+
+                                <ul class="dropdown-menu level2" role="menu">
+
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Aperitif                                                                                                                                                                                                                                                       " href="https://www.anbl.com/aperitif-1" data-url="/ecom/categorypage/3719fe1c-91f0-4e64-9653-4192414f00ed" tabindex="-1">Aperitif                                                                                                                                                                                                                                                       </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Other" href="https://www.anbl.com/other-44" tabindex="-1">Other</a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Sake                                                                                                                                                                                                                                                           " href="https://www.anbl.com/sake" tabindex="-1">Sake                                                                                                                                                                                                                                                           </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Sangria                                                                                                                                                                                                                                                        " href="https://www.anbl.com/sangria-2" tabindex="-1">Sangria                                                                                                                                                                                                                                                        </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Vermouth                                                                                                                                                                                                                                                       " href="https://www.anbl.com/vermouth" tabindex="-1">Vermouth                                                                                                                                                                                                                                                       </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Dessert                                                                                                                                                                                                                                                        " href="https://www.anbl.com/dessert-2" data-url="/ecom/categorypage/9c29517a-6c46-485b-b200-c488d0c23019" tabindex="-1">Dessert                                                                                                                                                                                                                                                        </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Ice Wine                                                                                                                                                                                                                                                       " href="https://www.anbl.com/ice-wine" tabindex="-1">Ice Wine                                                                                                                                                                                                                                                       </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Late Harvest                                                                                                                                                                                                                                                   " href="https://www.anbl.com/late-harvest" tabindex="-1">Late Harvest                                                                                                                                                                                                                                                   </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Other                                                                                                                                                                                                                                                          " href="https://www.anbl.com/other-1" tabindex="-1">Other                                                                                                                                                                                                                                                          </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Fortified                                                                                                                                                                                                                                                      " href="https://www.anbl.com/fortified" data-url="/ecom/categorypage/1c8647b4-2bed-4527-8457-71b5b889b8e7" tabindex="-1">Fortified                                                                                                                                                                                                                                                      </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Other                                                                                                                                                                                                                                                          " href="https://www.anbl.com/other-73" tabindex="-1">Other                                                                                                                                                                                                                                                          </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Port                                                                                                                                                                                                                                                           " href="https://www.anbl.com/port" tabindex="-1">Port                                                                                                                                                                                                                                                           </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Sherry/Apera                                                                                                                                                                                                                                                   " href="https://www.anbl.com/sherry-apera" tabindex="-1">Sherry/Apera                                                                                                                                                                                                                                                   </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                      <a title="Fruit Wine/Mead                                                                                                                                                                                                                                                " href="https://www.anbl.com/fruit-wine-mead-2">Fruit Wine/Mead                                                                                                                                                                                                                                                </a>
+                                    </li>
+                                    <li>
+                                      <a title="Multi-Pack                                                                                                                                                                                                                                                     " href="https://www.anbl.com/multi-pack">Multi-Pack                                                                                                                                                                                                                                                     </a>
+                                    </li>
+                                    <li>
+                                      <a title="Red Table                                                                                                                                                                                                                                                      " href="https://www.anbl.com/red-table-1">Red Table                                                                                                                                                                                                                                                      </a>
+                                    </li>
+                                    <li>
+                                      <a title="Rose Table                                                                                                                                                                                                                                                     " href="https://www.anbl.com/rose-table">Rose Table                                                                                                                                                                                                                                                     </a>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Sparkling                                                                                                                                                                                                                                                      " href="https://www.anbl.com/sparkling" data-url="/ecom/categorypage/f4640c16-191d-4664-903a-737b54162b92" tabindex="-1">Sparkling                                                                                                                                                                                                                                                      </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Fruit/Flavoured                                                                                                                                                                                                                                                " href="https://www.anbl.com/fruit-flavoured" tabindex="-1">Fruit/Flavoured                                                                                                                                                                                                                                                </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Red                                                                                                                                                                                                                                                            " href="https://www.anbl.com/red-2" tabindex="-1">Red                                                                                                                                                                                                                                                            </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Rose                                                                                                                                                                                                                                                           " href="https://www.anbl.com/rose" tabindex="-1">Rose                                                                                                                                                                                                                                                           </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="White                                                                                                                                                                                                                                                          " href="https://www.anbl.com/white-6" tabindex="-1">White                                                                                                                                                                                                                                                          </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                      <a title="White Table                                                                                                                                                                                                                                                    " href="https://www.anbl.com/white-table-1">White Table                                                                                                                                                                                                                                                    </a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                           <li class="expand dropdown ejs-firstLevelLink">
+                              <a class="lvl1" href="https://www.anbl.com/spirits">Spirits                                                                                                                                                                                                                                                        <b class="caret"></b></a>
+
+                                <ul class="dropdown-menu level2" role="menu">
+
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Brandy                                                                                                                                                                                                                                                         " href="https://www.anbl.com/brandy-4" data-url="/ecom/categorypage/02faaf83-03c8-4401-92f6-dc4486167e9d" tabindex="-1">Brandy                                                                                                                                                                                                                                                         </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Armagnac                                                                                                                                                                                                                                                       " href="https://www.anbl.com/armagnac-2" tabindex="-1">Armagnac                                                                                                                                                                                                                                                       </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Brandy                                                                                                                                                                                                                                                         " href="https://www.anbl.com/brandy" tabindex="-1">Brandy                                                                                                                                                                                                                                                         </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Calvados                                                                                                                                                                                                                                                       " href="https://www.anbl.com/calvados-2" tabindex="-1">Calvados                                                                                                                                                                                                                                                       </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Cognac                                                                                                                                                                                                                                                         " href="https://www.anbl.com/cognac-2" tabindex="-1">Cognac                                                                                                                                                                                                                                                         </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Fruit/Flavoured                                                                                                                                                                                                                                                " href="https://www.anbl.com/fruit-flavoured-2" tabindex="-1">Fruit/Flavoured                                                                                                                                                                                                                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Gin                                                                                                                                                                                                                                                            " href="https://www.anbl.com/gin" data-url="/ecom/categorypage/dc790107-1ada-476c-9679-6df31b912ec5" tabindex="-1">Gin                                                                                                                                                                                                                                                            </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Flavoured                                                                                                                                                                                                                                                      " href="https://www.anbl.com/flavoured-5" tabindex="-1">Flavoured                                                                                                                                                                                                                                                      </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Geneva                                                                                                                                                                                                                                                         " href="https://www.anbl.com/geneva-1" tabindex="-1">Geneva                                                                                                                                                                                                                                                         </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="London Dry                                                                                                                                                                                                                                                     " href="https://www.anbl.com/london-dry" tabindex="-1">London Dry                                                                                                                                                                                                                                                     </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Other                                                                                                                                                                                                                                                          " href="https://www.anbl.com/other-4" tabindex="-1">Other                                                                                                                                                                                                                                                          </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Liqueurs                                                                                                                                                                                                                                                       " href="https://www.anbl.com/liqueurs-2" data-url="/ecom/categorypage/e11355dd-0269-4b6c-a167-34fa8806f538" tabindex="-1">Liqueurs                                                                                                                                                                                                                                                       </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Aperitif                                                                                                                                                                                                                                                       " href="https://www.anbl.com/aperitif-2" tabindex="-1">Aperitif                                                                                                                                                                                                                                                       </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Chocolate                                                                                                                                                                                                                                                      " href="https://www.anbl.com/chocolate-5" tabindex="-1">Chocolate                                                                                                                                                                                                                                                      </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Coffee                                                                                                                                                                                                                                                         " href="https://www.anbl.com/coffee-2" tabindex="-1">Coffee                                                                                                                                                                                                                                                         </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Cream                                                                                                                                                                                                                                                          " href="https://www.anbl.com/cream" tabindex="-1">Cream                                                                                                                                                                                                                                                          </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Flavoured                                                                                                                                                                                                                                                      " href="https://www.anbl.com/flavoured-9" tabindex="-1">Flavoured                                                                                                                                                                                                                                                      </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Fruit                                                                                                                                                                                                                                                          " href="https://www.anbl.com/fruit-5" tabindex="-1">Fruit                                                                                                                                                                                                                                                          </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Fruit/Flavoured                                                                                                                                                                                                                                                " href="https://www.anbl.com/fruit-flavoured-4" tabindex="-1">Fruit/Flavoured                                                                                                                                                                                                                                                </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Herbal                                                                                                                                                                                                                                                         " href="https://www.anbl.com/herbal" tabindex="-1">Herbal                                                                                                                                                                                                                                                         </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Nut                                                                                                                                                                                                                                                            " href="https://www.anbl.com/nut-3" tabindex="-1">Nut                                                                                                                                                                                                                                                            </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Other                                                                                                                                                                                                                                                          " href="https://www.anbl.com/other-17" tabindex="-1">Other                                                                                                                                                                                                                                                          </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Sours                                                                                                                                                                                                                                                          " href="https://www.anbl.com/sours-2" tabindex="-1">Sours                                                                                                                                                                                                                                                          </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Spice                                                                                                                                                                                                                                                          " href="https://www.anbl.com/spice-2" tabindex="-1">Spice                                                                                                                                                                                                                                                          </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Sweet                                                                                                                                                                                                                                                          " href="https://www.anbl.com/sweet-2" tabindex="-1">Sweet                                                                                                                                                                                                                                                          </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                      <a title="Other                                                                                                                                                                                                                                                          " href="https://www.anbl.com/other-24">Other                                                                                                                                                                                                                                                          </a>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Premixed                                                                                                                                                                                                                                                       " href="https://www.anbl.com/premixed-2" data-url="/ecom/categorypage/def1d5a0-8977-4546-bc04-12aad7994aeb" tabindex="-1">Premixed                                                                                                                                                                                                                                                       </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Cocktail                                                                                                                                                                                                                                                       " href="https://www.anbl.com/cocktail-4" tabindex="-1">Cocktail                                                                                                                                                                                                                                                       </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Shooter                                                                                                                                                                                                                                                        " href="https://www.anbl.com/shooter" tabindex="-1">Shooter                                                                                                                                                                                                                                                        </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Rum                                                                                                                                                                                                                                                            " href="https://www.anbl.com/rum-1" data-url="/ecom/categorypage/69ac5c75-3b55-4bb7-81c9-28a44dee7ec5" tabindex="-1">Rum                                                                                                                                                                                                                                                            </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Amber                                                                                                                                                                                                                                                          " href="https://www.anbl.com/amber-2" tabindex="-1">Amber                                                                                                                                                                                                                                                          </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Dark                                                                                                                                                                                                                                                           " href="https://www.anbl.com/dark-1" tabindex="-1">Dark                                                                                                                                                                                                                                                           </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Flavoured                                                                                                                                                                                                                                                      " href="https://www.anbl.com/flavoured-6" tabindex="-1">Flavoured                                                                                                                                                                                                                                                      </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Spiced                                                                                                                                                                                                                                                         " href="https://www.anbl.com/spiced-1" tabindex="-1">Spiced                                                                                                                                                                                                                                                         </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="White                                                                                                                                                                                                                                                          " href="https://www.anbl.com/white" tabindex="-1">White                                                                                                                                                                                                                                                          </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Tequila                                                                                                                                                                                                                                                        " href="https://www.anbl.com/tequila" data-url="/ecom/categorypage/b4bf62f8-cdd8-4bc4-97fb-9787add2018b" tabindex="-1">Tequila                                                                                                                                                                                                                                                        </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="100% Agave                                                                                                                                                                                                                                                     " href="https://www.anbl.com/100-agave-2" tabindex="-1">100% Agave                                                                                                                                                                                                                                                     </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Mixto                                                                                                                                                                                                                                                          " href="https://www.anbl.com/mixto-2" tabindex="-1">Mixto                                                                                                                                                                                                                                                          </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Vodka                                                                                                                                                                                                                                                          " href="https://www.anbl.com/vodka" data-url="/ecom/categorypage/9e260ee2-b806-42fb-a12c-bf9c2447f715" tabindex="-1">Vodka                                                                                                                                                                                                                                                          </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Flavoured                                                                                                                                                                                                                                                      " href="https://www.anbl.com/flavoured-3" tabindex="-1">Flavoured                                                                                                                                                                                                                                                      </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Unflavoured                                                                                                                                                                                                                                                    " href="https://www.anbl.com/unflavoured" tabindex="-1">Unflavoured                                                                                                                                                                                                                                                    </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Whisky                                                                                                                                                                                                                                                         " href="https://www.anbl.com/whisky-1" data-url="/ecom/categorypage/801c28dd-7e3b-477a-8431-5a42750e596a" tabindex="-1">Whisky                                                                                                                                                                                                                                                         </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="American Whiskey                                                                                                                                                                                                                                               " href="https://www.anbl.com/american-whiskey-1" tabindex="-1">American Whiskey                                                                                                                                                                                                                                               </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Canadian Whisky                                                                                                                                                                                                                                                " href="https://www.anbl.com/canadian-whisky-1" tabindex="-1">Canadian Whisky                                                                                                                                                                                                                                                </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="International Whisky                                                                                                                                                                                                                                           " href="https://www.anbl.com/international-whisky-1" tabindex="-1">International Whisky                                                                                                                                                                                                                                           </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Irish Whiskey                                                                                                                                                                                                                                                  " href="https://www.anbl.com/irish-whiskey-1" tabindex="-1">Irish Whiskey                                                                                                                                                                                                                                                  </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Scotch Single Malts                                                                                                                                                                                                                                            " href="https://www.anbl.com/scotch-single-malts-1" tabindex="-1">Scotch Single Malts                                                                                                                                                                                                                                            </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Scotch Whisky Blends                                                                                                                                                                                                                                           " href="https://www.anbl.com/scotch-whisky-blends-1" tabindex="-1">Scotch Whisky Blends                                                                                                                                                                                                                                           </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                            </li>
+                           <li class="expand dropdown ejs-firstLevelLink">
+                              <a class="lvl1" href="https://www.anbl.com/ciders-1">Ciders<b class="caret"></b></a>
+
+                                <ul class="dropdown-menu level2" role="menu">
+
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Dry                                                                                                                                                                                                                                                            " href="https://www.anbl.com/dry-2" data-url="/ecom/categorypage/b5ed8e07-278b-43b1-9f54-3a03e23b8c94" tabindex="-1">Dry                                                                                                                                                                                                                                                            </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Dry Modern                                                                                                                                                                                                                                                     " href="https://www.anbl.com/dry-modern" tabindex="-1">Dry Modern                                                                                                                                                                                                                                                     </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Dry Traditional                                                                                                                                                                                                                                                " href="https://www.anbl.com/dry-traditional" tabindex="-1">Dry Traditional                                                                                                                                                                                                                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Medium-Dry                                                                                                                                                                                                                                                     " href="https://www.anbl.com/medium-dry-1" data-url="/ecom/categorypage/75d148a2-c598-4bcd-a4ea-c26d56a53c1d" tabindex="-1">Medium-Dry                                                                                                                                                                                                                                                     </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Med Dry - Modern                                                                                                                                                                                                                                               " href="https://www.anbl.com/med-dry-modern-1" tabindex="-1">Med Dry - Modern                                                                                                                                                                                                                                               </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Med Dry Modern                                                                                                                                                                                                                                                 " href="https://www.anbl.com/med-dry-modern" tabindex="-1">Med Dry Modern                                                                                                                                                                                                                                                 </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Med Dry Traditional                                                                                                                                                                                                                                            " href="https://www.anbl.com/med-dry-traditional" tabindex="-1">Med Dry Traditional                                                                                                                                                                                                                                            </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Mixer Pack                                                                                                                                                                                                                                                     " href="https://www.anbl.com/mixer-pack-1" data-url="/ecom/categorypage/08022cbf-d77f-401d-8b6e-985c8de1f461" tabindex="-1">Mixer Pack                                                                                                                                                                                                                                                     </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Mixer Modern                                                                                                                                                                                                                                                   " href="https://www.anbl.com/mixer-modern" tabindex="-1">Mixer Modern                                                                                                                                                                                                                                                   </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Sweet                                                                                                                                                                                                                                                          " href="https://www.anbl.com/sweet-4" data-url="/ecom/categorypage/a21dae22-1099-4c55-9dac-b7d2c9b75067" tabindex="-1">Sweet                                                                                                                                                                                                                                                          </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Sweet Modern                                                                                                                                                                                                                                                   " href="https://www.anbl.com/sweet-modern" tabindex="-1">Sweet Modern                                                                                                                                                                                                                                                   </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Sweet Traditional                                                                                                                                                                                                                                              " href="https://www.anbl.com/sweet-traditional" tabindex="-1">Sweet Traditional                                                                                                                                                                                                                                              </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                            </li>
+                           <li class="expand dropdown ejs-firstLevelLink">
+                              <a class="lvl1" href="https://www.anbl.com/coolers-1">Coolers<b class="caret"></b></a>
+
+                                <ul class="dropdown-menu level2" role="menu">
+
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Cocktail                                                                                                                                                                                                                                                       " href="https://www.anbl.com/cocktail-2" data-url="/ecom/categorypage/9a281bf0-5cbb-453c-8f0f-f1a948baaad2" tabindex="-1">Cocktail                                                                                                                                                                                                                                                       </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Cocktail - Spirit                                                                                                                                                                                                                                              " href="https://www.anbl.com/cocktail-spirit" tabindex="-1">Cocktail - Spirit                                                                                                                                                                                                                                              </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Cocktail - Wine                                                                                                                                                                                                                                                " href="https://www.anbl.com/cocktail-wine" tabindex="-1">Cocktail - Wine                                                                                                                                                                                                                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Coolers                                                                                                                                                                                                                                                        " href="https://www.anbl.com/coolers-3" data-url="/ecom/categorypage/435424d5-a3ad-4dca-a8bf-a1a86e59a5fd" tabindex="-1">Coolers                                                                                                                                                                                                                                                        </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Coolers - Malt                                                                                                                                                                                                                                                 " href="https://www.anbl.com/coolers-malt" tabindex="-1">Coolers - Malt                                                                                                                                                                                                                                                 </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Coolers - Spirit                                                                                                                                                                                                                                               " href="https://www.anbl.com/coolers-spirit" tabindex="-1">Coolers - Spirit                                                                                                                                                                                                                                               </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Coolers - Wine                                                                                                                                                                                                                                                 " href="https://www.anbl.com/coolers-wine" tabindex="-1">Coolers - Wine                                                                                                                                                                                                                                                 </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Iced Tea                                                                                                                                                                                                                                                       " href="https://www.anbl.com/iced-tea" data-url="/ecom/categorypage/47b4da64-db06-465a-975a-1c4d0975bee5" tabindex="-1">Iced Tea                                                                                                                                                                                                                                                       </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Iced Tea - Malt                                                                                                                                                                                                                                                " href="https://www.anbl.com/iced-tea-malt" tabindex="-1">Iced Tea - Malt                                                                                                                                                                                                                                                </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Iced Tea - Spirit                                                                                                                                                                                                                                              " href="https://www.anbl.com/iced-tea-spirit" tabindex="-1">Iced Tea - Spirit                                                                                                                                                                                                                                              </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Mixer Pack                                                                                                                                                                                                                                                     " href="https://www.anbl.com/mixer-pack" data-url="/ecom/categorypage/0652f40a-0234-445a-b256-3d0b38d5f251" tabindex="-1">Mixer Pack                                                                                                                                                                                                                                                     </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Mixer - Malt                                                                                                                                                                                                                                                   " href="https://www.anbl.com/mixer-malt" tabindex="-1">Mixer - Malt                                                                                                                                                                                                                                                   </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Mixer - Spirit                                                                                                                                                                                                                                                 " href="https://www.anbl.com/mixer-spirit" tabindex="-1">Mixer - Spirit                                                                                                                                                                                                                                                 </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                      <a title="Refreshment Wines                                                                                                                                                                                                                                              " href="https://www.anbl.com/refreshment-wines-1">Refreshment Wines                                                                                                                                                                                                                                              </a>
+                                    </li>
+                                    <li class="expand dropdown-submenu">
+                                      <a title="Soda                                                                                                                                                                                                                                                           " href="https://www.anbl.com/soda" data-url="/ecom/categorypage/f28416c7-6aec-4ba3-bedc-dfaccf92fd04" tabindex="-1">Soda                                                                                                                                                                                                                                                           </a>
+
+                                        <ul class="level3 dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a title="Soda - Full Flavour                                                                                                                                                                                                                                            " href="https://www.anbl.com/soda-full-flavour" tabindex="-1">Soda - Full Flavour                                                                                                                                                                                                                                            </a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a title="Soda - Low Calorie                                                                                                                                                                                                                                             " href="https://www.anbl.com/soda-low-calorie" tabindex="-1">Soda - Low Calorie                                                                                                                                                                                                                                             </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                            </li>
+										<li>
+											<a title="Explore NB" href="https://www.anbl.com/explore-nb">Explore NB</a>
+										</li>
+										<li>
+											<a title="Hot Deals" href="https://www.anbl.com/hot-deals">Hot Deals</a>
+										</li>
+										<li>
+											<a title="News" href="https://www.anbl.com/news">News</a>
+										</li>
+								</ul>
+							</div>
+
+							<div class="nav-quicklinks span2">
+                <ul class="nav nav-pills inline">
+									<li>
+										<!--[isk] 1st btn form show/hide trigger-->
+										<a class="btn-search box pointer-cursor">
+											<i class="fa fa-search fa-inverted" aria-hidden="true"></i>
+										</a>
+									</li>
+                  								</ul>
+							</div>
+						</div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- SEARCH NAVIGATION -->
+      <div class="main-navig-search" role="search">
+        <form class="form-search ejs-search-bar" action="https://www.anbl.com/products-search" method="get" onsubmit="SearchAsType.PreventAjaxCall();" novalidate="novalidate">
+
+          <input autocomplete="off" class="form-search-input" id="txtQsBar" name="qs" placeholder="Search by Keyword" type="text" value="">
+          <!--[isk] 2nd btn search trigger-->
+          <button class="btn btn-go" id="cmdSearchBar" type="submit"><i class="fa fa-search fa-inverted" aria-hidden="true"></i></button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+
+				</div>
+			</div>
+
+			<section class="main-section">
+				<div id="main-section" class="container">
+					<div id="ejs-main-section" class="section-body-container">
+						
+
+
+<div class="row-fluid">
+  <div class="span12">   
+    <div class="widget" data-type="view" data-index="1">
+      
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $("#ANBLWarehouses").click(function () {
+      $(this).hide();
+      $("#ANBLSectionModal").modal({
+        show: true,
+        backdrop: "static",
+        keyboard: false
+      });
+      $("#ANBLWarehouses").show();
+    });
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      }
+    }
+
+    function showPosition(position) {
+
+      function GetData() {
+        var data = {
+          longitude: position.coords.longitude,
+          latitude: position.coords.latitude,
+          idProduct: "abf21c68-6561-46c3-b3cb-f470efda839e",
+					idCategory: "2b88cffc-6e11-4126-a83f-9efa0cf3d894",
+				  widgetCode: "SdWlppw1TpFAaFHqsHbZSljudKMF2H2XHmugGZWI/xGwaOZtHbR5qBJoB2TXCUeL",
+				  controlIndex: "1",
+				  pageVersionId: "0"
+				};
+
+                return data;
+              }
+
+              var data = GetData();
+              $.ajax({
+                cache: false,
+                async: true,
+                type: "POST",
+                url: "/ANBLWGTProductPage/SetPreferredStoreByGeoLocalisation",
+                data: $.param(data),
+                error: function (result) {
+                  if (!Utils.handleAjaxUnauthorize(result)) {
+                    Statusbar.showMessage(TextResources.getText("requesterror"), Utils.messageTypeResult.ERROR);
+                  }
+                },
+                success: function (result) {
+                  if (result.Result == Utils.ajaxResultType.REDIRECT) {
+                    window.location.href = result.RedirectUrl;
+                  }
+                  else if (result.Result == Utils.ajaxResultType.ERROR) {
+                    Statusbar.showMessage(TextResources.getText("requesterror"), Utils.messageTypeResult.ERROR);
+                  }
+
+                  //if (result.StatusMessages && result.StatusMessages.length > 0) {
+                  //	Statusbar.showMessages(result.StatusMessages);
+                  //}
+                  //else {
+                  //	statusBarHandle.close();
+                  //}
+                }
+              });
+            }
+
+	  var locationRequired = "False";
+	  if (locationRequired.toString().toLowerCase() == "true") {
+	    getLocation();
+	  }
+	});
+
+</script>
+
+<div class="product-detail site-content clearfix row-fluid">
+
+    <!-- breadcrumb section-->
+
+    <div class="row-fluid">
+        <ul class="breadcrumb"><li class=""><a title="ANBL" href="https://www.anbl.com/">ANBL</a><span class="divider">&gt;</span></li><li class=""><a title="Catalog" href="https://www.anbl.com/catalog">Catalog</a><span class="divider">&gt;</span></li><li class=""><a title="Beer                                                                                                                                                                                                                                                           " href="https://www.anbl.com/beer">Beer                                                                                                                                                                                                                                                           </a><span class="divider">&gt;</span></li><li class=""><a title="Lager                                                                                                                                                                                                                                                          " href="https://www.anbl.com/lager">Lager                                                                                                                                                                                                                                                          </a><span class="divider">&gt;</span></li><li class=""><a title="American Lagers                                                                                                                                                                                                                                                " href="https://www.anbl.com/american-lagers-1">American Lagers                                                                                                                                                                                                                                                </a><span class="divider">&gt;</span></li><li class=""><a title="Adjunct Lager                                                                                                                                                                                                                                                  " href="https://www.anbl.com/adjunct-lager-1">Adjunct Lager                                                                                                                                                                                                                                                  </a><span class="divider">&gt;</span></li><li class="active">Alpine Lager 12 B</li></ul>
+    </div>
+
+    <!-- product detail START -->
+
+    <div class="row-fluid">
+        <div class="span4">
+            <div class="product-image">
+              <!-- Widget Unique Code used for calls to the Model from the controller  -->
+              <input id="WidgetUniqueCode" name="WidgetUniqueCode" type="hidden" value="SdWlppw1TpFAaFHqsHbZSljudKMF2H2XHmugGZWI/xGwaOZtHbR5qBJoB2TXCUeL">
+              <input id="CategoryId" name="CategoryId" type="hidden" value="2b88cffc-6e11-4126-a83f-9efa0cf3d894">
+              
+
+
+
+
+							<img id="product-detail-gallery-main-img" alt="Alpine Lager 12 B" title="Alpine Lager 12 B" src="./sample-page_files/10965-B.jpg" data-zoom-image="">
+
+
+
+              
+            </div>
+
+        </div>
+        <div class="span8">
+            <div class="row-fluid">
+                <h1>Alpine Lager 12 B</h1>
+                  <p class="product-details-code">Product Code: 776029700046   </p>
+
+              
+                <div class="row-fluid">
+                  <div class="span6">
+											    <p>Alpine Lager is an award winning beer that is slowly aged to give it a light colour and medium body, with a fleeting hop bitterness and slightly sweet malty aroma, making it a preferred choice for Maritimers since 1937.</p>
+                  </div>
+                  <div class="span6">
+								        <div class="well informationAttributesSection">
+									        <ul class="unstyled">
+                              <li class="information-attribute"><span class="attribute-title">Alcohol content :</span> <span class="attribute-value">5.0%</span></li>
+                              <li class="information-attribute"><span class="attribute-title">Quantity per container :</span> <span class="attribute-value">12</span></li>
+                              <li class="information-attribute"><span class="attribute-title">Container Size :</span> <span class="attribute-value">341 mL</span></li>
+                              <li class="information-attribute"><span class="attribute-title">Country of origin :</span> <span class="attribute-value">Canada                         </span></li>
+								        </ul>
+							         </div>
+                  </div>
+                </div>
+
+               
+							</div>
+              <div class="row-fluid">
+                <div class="span12 addthis-section"><span class="addthis-label"></span> <script type="text/javascript" src="./sample-page_files/addthis_widget.js"></script>
+<div class="addthis_inline_share_toolbox"></div></div>
+              </div>
+
+			<div class="row-fluid product-disclaimer"><p>In the event of a price discrepancy between online and in store, the ANBL store price prevails.<br>
+Prices online are not available at our DEPOT location. For special outlet pricing, visit us in store in Salisbury.<br>
+Products that are exclusive to our Salisbury DEPOT and EXPÉRIENCE by ANBL stores are NOT available for transfer to other locations.<br>
+<br>
+</p></div>
+
+            <div class="row-fluid">
+                <div id="productRatingPartialContainer">
+
+
+                </div>
+            </div>
+
+            <div class="row-fluid">
+
+
+                <div class="span12">
+
+                                <div class="unstyled single-price-display">
+                                  <div class="price-group">
+                                    
+                                    <strong class="price price-current ">$25.49</strong> /UNIT
+                                  </div>
+                                                                  </div>
+                </div>
+								
+					</div>
+									<!--PreferredStoreQtyPerWarehouse-->
+
+
+
+<div id="ANBLPreferredStoreQty" class="row-fluid">
+
+
+
+<div class="span12 preferredStoreQty">
+			<table class="table table-striped qtyByWarehouseTable flip-scroll">
+		<thead>
+			<tr>
+						<th class="warehouseName">
+					<span>Store</span>
+				</th>
+						<th class="warehouseAddress">
+					<span>Address</span>
+				</th>
+						<th class="warehouseCity">
+					<span>City</span>
+				</th>
+						<th class="warehouseQty">
+					<span>Quantity</span>
+				</th> 
+			</tr>
+		</thead>
+
+		<tbody>
+				<tr>
+							<td class="warehouseName" data-title="Store">
+						<span>My preferred store : Fredericton - Brookside Mall</span>
+					</td>
+							<td class="warehouseAddress" data-title="Address">
+						<span>Brookside Mall Unit 25A</span>
+					</td>
+							<td class="warehouseCity" data-title="City">
+						<span>Fredericton</span>
+					</td>
+								<td class="warehouseQty text-center" data-title="Quantity">
+							<span>157</span>
+						</td>
+
+				</tr>
+				<tr>
+							<td class="warehouseName" data-title="Store">
+						<span>Fredericton - Devon Park</span>
+					</td>
+							<td class="warehouseAddress" data-title="Address">
+						<span>580 rue Union Street</span>
+					</td>
+							<td class="warehouseCity" data-title="City">
+						<span>Fredericton</span>
+					</td>
+								<td class="warehouseQty text-center" data-title="Quantity">
+							<span>81</span>
+						</td>
+
+				</tr>
+				<tr>
+							<td class="warehouseName" data-title="Store">
+						<span>Fredericton - rue York Street</span>
+					</td>
+							<td class="warehouseAddress" data-title="Address">
+						<span>380 rue York Street</span>
+					</td>
+							<td class="warehouseCity" data-title="City">
+						<span>Fredericton</span>
+					</td>
+								<td class="warehouseQty text-center" data-title="Quantity">
+							<span>30</span>
+						</td>
+
+				</tr>
+		</tbody>
+	</table>
+	</div>
+</div>
+					<!--QtyPerWarehouse-->
+
+<div class="anblWarehouses row-fluid">
+  <a title="View other store inventory" class="btn btn-secondary btn-ANBL ejs-btn-anbl pull-right" id="ANBLWarehouses" href="javascript:void(0);">View other store inventory</a>
+</div>
+
+<div id="ANBLSectionModal" class="modal hide fade">
+	<div id="ANBLodalHeader" class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3><div class="h2TitleContainer">Stores quantity</div></h3>
+	</div>
+	<div id="ANBLSectionModalBody" class="modal-body">
+
+	<table class="table table-striped flip-scroll qtyByWarehouseTable">
+		<thead>
+			<tr>
+				<th class="warehouseName smallContentTextBold">
+					<span>Store</span>
+				</th>
+				<th class="warehouseAddress smallContentTextBold">
+					<span>Address</span>
+				</th>
+				<th class="warehouseCity smallContentTextBold">
+					<span>City</span>
+				</th>
+				<th class="warehouseQty smallContentTextBold">
+					<span>Quantity</span>
+				</th> 
+			</tr>
+		</thead>
+
+		<tbody>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Bathurst</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>#1 - 1125 ave St Peter Ave</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Bathurst</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>140</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Beresford</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>267 rue Commerce St</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Beresford</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>212</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Bouctouche</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>7 - 193 boul. Irving Blvd</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Bouctouche</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>28</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Campbellton</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>130 rue Roseberry Street</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Campbellton</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>25</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Caraquet</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>138 Boul St Pierre Ouest Blvd</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Caraquet</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>177</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Dalhousie</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>375 boul. Miller Boulevard</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Dalhousie</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>60</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Dieppe - boul. Dieppe Blvd</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>780 boul. Dieppe Blvd</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Dieppe</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>43</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Dieppe - rue Regis St</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>513 rue Regis Street</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Dieppe</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>171</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Edmundston</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>575 rue Victoria Street</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Edmundston</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>119</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Fredericton - Brookside Mall</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>Brookside Mall Unit 25A</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Fredericton</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>157</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Fredericton - Corbett Centre</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>18 Trinity Ave Unit F-3</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Fredericton</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>178</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Fredericton - Devon Park</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>580 rue Union Street</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Fredericton</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>81</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Fredericton - rue York Street</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>380 rue York Street</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Fredericton</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>30</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Grand Falls</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>240-A ch. Madawaska Road</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Grand Falls</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>116</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Hampton</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>454 rue Main Street</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Hampton</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>43</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Kennebecasis Valley</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>115 prom. Campbell Drive</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Rothesay</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>61</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Miramichi - Chatham</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>Chatham Shopping Mall</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Miramichi</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>102</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Miramichi - rue Pleasant St</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>221 rue Pleasant Street</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Miramichi</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>217</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Moncton - ch Mountain Road</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>936 ch. Mountain Road</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Moncton</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>162</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Moncton - ch. Elmwood Drive</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>71 ave Filles de Jesus Ave</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Moncton</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>92</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Moncton - Vaughan Harvey</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>49  boul. Vaughan Harvey Blvd.</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Moncton</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>185</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Moncton North / Nord</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>1780 ch. Mountain Road</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Moncton</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>163</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Neguac</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>948 rue Principale</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Neguac</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>37</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Oromocto</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>375 ch. Miramichi Road</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Oromocto</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>60</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Perth-Andover</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>26-F ch. Tribe Road</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Perth-Andover</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>14</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Richibucto</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>12 Allee De La Cooperative</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Richibucto</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>26</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Riverview</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>1160 boul. Findlay Blvd</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Riverview</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>177</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Sackville</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>11-A rue Wright Street</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Sackville</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>25</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Saint Andrews</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>100 rue Water Street</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Saint Andrews</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>24</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Saint John - boul Fairville Bl</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>31 ave Plaza Ave</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Saint John</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>90</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Saint John - East Point</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>40 East Point Way</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Saint John</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>156</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Saint John - rue Somerset St</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>650 rue Somerset Street</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Saint John</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>133</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Saint John - Wellington Row</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>10 rang Wellington Row</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Saint John</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>127</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Shediac</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>313-B Main Street</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Shediac</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>30</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Shippagan</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>268 Boulevard JD Gauthier Blvd.</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Shippagan</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>244</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>St. Stephen</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>#160 - 210 rue King St</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>St. Stephen</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>17</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Sussex</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>138 rue Main Street Gateway Mall</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Sussex</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>219</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Tracadie-Sheila</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>884 rue du Developpement St</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Tracadie-Sheila</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>85</span>
+						</td>
+
+				</tr>
+				<tr>
+					<td class="warehouseName" data-title="Store">
+						<span>Woodstock</span>
+					</td>
+					<td class="warehouseAddress" data-title="Address">
+						<span>104 rue Gallop Street Ext</span>
+					</td>
+					<td class="warehouseCity" data-title="City">
+						<span>Woodstock</span>
+					</td>
+						<td class="warehouseQty" data-title="Quantity">
+							<span>143</span>
+						</td>
+
+				</tr>
+		</tbody>
+	</table>
+	</div>
+</div>
+
+        <div class="row-fluid">
+          <div class="span6">
+                <!--Product Add To Cart, Add to Purchase list START-->
+                <!--Quantity Text Box-->
+
+            </div>
+
+            <div class="span6">
+
+            </div>
+        </div>
+
+
+        </div>
+    </div>
+
+    <div class="row-fluid">
+
+    </div>
+
+    <input id="ProductCode" name="ProductCode" type="hidden" value="10965">
+<input id="PromotionFromId" name="PromotionFromId" type="hidden" value="-1"><!-- product detail END -->
+</div>
+  
+    </div>
+    <div class="widget" data-type="view" data-index="2">
+      <div class="row-fluid visible-desktop">
+  <div class="offset4 span8">   
+     <div class="row-fluid text-right product-navigation">
+        <div class="span7 boxshad pull-right">
+          <ul class="unstyled inline">
+              <li class="span6 text-center">
+                <a href="https://www.anbl.com/adjunct-lager-1/ace-hill-vienna-lager-473ml-36889">            
+                  <img alt="Ace Hill Vienna Lager 473ml" title="Ace Hill Vienna Lager 473ml" src="./sample-page_files/36889-T.jpg">                        
+                </a>
+                <small><a href="https://www.anbl.com/adjunct-lager-1/ace-hill-vienna-lager-473ml-36889"><br>&lt; Previous Product</a></small>
+              </li>            
+
+              <li class="span6 text-center"><a href="https://www.anbl.com/adjunct-lager-1/alpine-lager-15-c-18905">            
+                  <img alt="Alpine Lager 15 C" title="Alpine Lager 15 C" src="./sample-page_files/18905-T.jpg">                        
+                </a>
+                <small><a href="https://www.anbl.com/adjunct-lager-1/alpine-lager-15-c-18905"><br>Next Product &gt;</a></small>
+              </li>            
+          </ul>
+        </div>        
+    </div>                                               
+  </div>
+</div>
+  
+    </div>
+  </div>
+</div>
+
+
+<div class="widget" data-type="view" data-index="3">
+  
+
+</div>
+
+
+<div class="widget" data-type="view" data-index="5">
+  
+
+</div>
+
+<div class="widget" data-type="view" data-index="4">
+  
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    ShoppingCart.initAddToCart("recentlyViewedProductsForm");
+    $forms = $("recentlyViewedProductsForm");
+    $forms.unbind();
+    $forms.removeData("validator");
+    $.validator.unobtrusive.parse($forms);
+
+    EcomUtils.bindProductsImagesRedirect();
+  });
+
+</script>
+<!-- Recently viewed products -->
+<div class="recently-viewed-product">
+  <div class="row-fluid">
+    <div class="span12">
+      <h3><div class="h2TitleContainer">Recently Viewed</div></h3>
+
+      <form id="recentlyViewedProductsForm" class="ejs-addtocartform" onsubmit="return false;" method="post" novalidate="novalidate">
+				<div class="row-fluid grid-layout recently-viewed-product-listing">
+          <div class="span3">
+            <div class="boxshad productbox">
+              <div class="box-photo">
+                <img data-product-url="/petit-sault-la-kedgwick-341ml-24797" alt="Petit-Sault La Kedgwick 341ml" title="Petit-Sault La Kedgwick 341ml" src="./sample-page_files/24797-T.jpg" style="cursor: pointer;">
+              </div>
+              <div class="box-info">
+                <a class="product-title strong" href="https://www.anbl.com/petit-sault-la-kedgwick-341ml-24797" title="Petit-Sault La Kedgwick 341ml">Petit-Sault La Kedgwick 341ml</a>
+              </div>
+
+                <div class="box-price">
+                  <ul class="unstyled price-container">
+                      <li>
+                          <strong class="price">$2.80 /UNIT</strong>
+                      </li>
+                                                              </ul>
+                </div>
+              
+            </div>    
+           </div>          
+          <div class="span3">
+            <div class="boxshad productbox">
+              <div class="box-photo">
+                <img data-product-url="/bud-light-radler-473ml-28188" alt="Bud Light Radler 473ml" title="Bud Light Radler 473ml" src="./sample-page_files/28188-T.jpg" style="cursor: pointer;">
+              </div>
+              <div class="box-info">
+                <a class="product-title strong" href="https://www.anbl.com/bud-light-radler-473ml-28188" title="Bud Light Radler 473ml">Bud Light Radler 473ml</a>
+              </div>
+
+                <div class="box-price">
+                  <ul class="unstyled price-container">
+                      <li>
+                          <strong class="price">$1.79 /UNIT</strong>
+                      </li>
+                                                              </ul>
+                </div>
+              
+            </div>    
+           </div>          
+        </div>
+      </form>              
+    </div>
+  </div>
+</div>
+
+</div>
+
+					</div>
+				</div>
+			</section>
+		</div>
+
+    <div class="widget" data-type="layout" data-index="3">
+			
+		</div>
+  
+    <!-- FOOTER SECTION -->
+    <footer>
+      <div class="container">
+        <div class="widget" data-type="layout" data-index="4">
+          <div class="footereFlyerSection"><div class="container"><div class="row-fluid"><div class="span6"><img alt="ANBL-email-list-winter-2021-en" src="./sample-page_files/ANBL-email-list-winter-2021-en.jpg" title="ANBL-email-list-winter-2021-en"></div><div class="span6"><div class="eflyerTitleSection">get the latest info each week on sales and promotions, new products, recipes and more</div><div class="eflyerbtnsection"><a class="btn btn-eflyer-big" href="http://anbl.us1.list-manage2.com/subscribe?u=44eff02b849337bcef66bdae3&amp;id=549e062cae">sign up for our
+            <br><strong>weekly e-mail</strong></a><div class="text-center eflyer-smalllinks"></div></div></div></div></div></div><div class="container"><div class="row-fluid"><div class="span4 footerSocial"><div class="footerSocialLinks"><ul class="inline unstyled"><li><a href="https://www.facebook.com/ANBL/" target="_blank"><span class="fa fa-facebook-square" aria-hidden="true"></span></a>
+ </li><li><a href="https://twitter.com/ANBL_ENG" target="_blank"><span class="fa fa-twitter-square" aria-hidden="true"></span></a>
+ </li><li><a href="http://www.instagram.com/ANBL" target="_blank"><span class="fa-stack fa-lg"><span aria-hidden="true" class="fa fa-square fa-stack-2x"></span><span class="fa fa-instagram fa-stack-1x fa-inverse" aria-hidden="true"></span></span>
+ </a>
+ </li><li><br></li></ul></div></div><div class="span4 footerLogo"><img alt="ANBL" src="./sample-page_files/footerlogo.png"></div><div class="span4 footerLinks"><div class="row-fluid"><div class="span12">ANBL is responsible for the purchase, importation, distribution and retailing of all alcoholic beverages in New Brunswick.
+        </div></div><div class="row-fluid"><div class="span4"><ul class="footerLinks unstyled"><li class="footerLinkTitle">INFORMATION</li><li><a title="About ANBL" href="https://www.anbl.com/about-us">About ANBL</a></li><li><a title="Careers" href="https://www.anbl.com/careers">Careers</a></li><li><a title="Purchase Gift Cards" href="https://www.staples.ca/search?q=new%20brunswick%20liquor&amp;hPP=32&amp;idx=shopify_products&amp;is_v=1&amp;p=0" target="_blank">Purchase Gift Cards</a></li><li><a title="Gift Card Balance" href="https://wwws-pt1.givex.com/Merchant_pages/3120205_en/" target="_blank">Gift Card Balance</a></li><li><a title="Events" href="https://www.anbl.com/events">Events</a></li><li><a title="ANBL Cares" href="https://www.anbl.com/anblcares">ANBL Cares</a></li><br></ul></div><div class="span4"><ul class="footerLinks unstyled"><li class="footerLinkTitle">RESOURCES</li><li><a href="https://www.anbl.com/contact-us-anbl" title="contact us page">Contact Us</a></li><li><a title="Suppliers" href="https://www.anbl.com/suppliers">Suppliers</a><br></li><li><a title="Public Tenders" href="https://www.anbl.com/tenders">Public Tenders</a></li><li><a title="Licensees" href="https://www.anbl.com/licensees">Licensees</a></li><li><a title="FAQs" href="https://www.anbl.com/faq">FAQs</a></li><li><a title="Trade Resources" href="https://services.anbl.com/ANBLPortal/Login.aspx" target="_blank">Trade Resources</a></li></ul><ul class="footerLinks unstyled">&nbsp;</ul></div><div class="span4"><ul class="footerLinks unstyled"><li class="footerLinkTitle">POLICIES</li><li><a title="Terms &amp; Conditions" href="https://www.anbl.com/terms">Terms &amp; Conditions</a><br></li><li><a title="Privacy" href="https://www.anbl.com/privacy">Privacy</a><br></li></ul></div></div></div></div></div><div class="footerCopy"><div class="container"><div class="row-fluid"><div class="span6 footerCopyLine">&nbsp;<span style="text-align:center;">Copyright © 2021. All rights reserved.</span></div></div></div><div class="footerMobileSwitch ejs-footerMobileSwitch" style="display:none;"><a class="btn btn-small btn-primary ejs-mobileViewDesktop" href="javascript: return false;"><span aria-hidden="true" class="fa fa-desktop fa-small"></span>View desktop site</a>
+ 		<a class="btn btn-small btn-primary ejs-mobileViewMobile" href="javascript: return false;"><span aria-hidden="true" class="fa fa-mobile fa-small"></span>View mobile site</a>
+ 	</div></div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="backtotop" style="display: none;">
+      <a href="https://www.anbl.com/alpine-lager-12-b-10965#" title="Return to top">
+        <i class="fa fa-chevron-up fa-inverted" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+  <!-- Google Analytics -->    <script>    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');      ga('create', 'UA-7866668-8', 'auto');    ga('send', 'pageview');    </script>  <!-- End Google Analytics -->
+
+
+</body></html>
