@@ -2,8 +2,8 @@ import json
 import queue
 import time
 from threading import Thread
-from anbl_scraper_tools import url_scraper_worker
-from anbl_converter import anbl_csv_writer
+from anbl_scraper.anbl_scraper_tools import url_scraper_worker
+from anbl_scraper.anbl_converter import anbl_csv_writer
 
 AUTOSAVE = False
 STATUS_PERIOD = 5

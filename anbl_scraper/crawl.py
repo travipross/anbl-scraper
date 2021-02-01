@@ -3,8 +3,6 @@ import requests
 import bs4
 
 
-
-
 # headers = {
 #     'Connection': 'keep-alive',
 #     'sec-ch-ua': '"Chromium";v="88", "Google Chrome";v="88", ";Not A Brand";v="99"',
@@ -25,7 +23,7 @@ import bs4
 
 def build_data_payload(category, page, page_size, sort_mode=SORT_MODES['name']):
     data = {
-        'categoryId': CATEGORY_IDS['wine'],
+        'categoryId': CATEGORY_IDS[category],
         'pageFrom': str(page),
         'pageTo': str(page),
         'userResultPerPage': str(page_size),
@@ -53,19 +51,21 @@ def get_number_of_products(category):
 def get_number_of_pages(n_products, page_size):
     return n_products // page_size + ( 0 if n_products%page_size == 0 else 1 )
 
-page_size = 100
-product_type = 'cider'
-n_prods = get_number_of_products(product_type)
-n_pages = get_number_of_pages(n_prods, page_size)
 
-products = []
-for page in range(n_pages):
-    data = build_data_payload(product_type, page, page_size)
-    response = requests.post(INDEX_URL, data=data)
-    soup = bs4.BeautifulSoup(response.text, 'html.parser')
 
-    product_soup = soup.find_all(class_='product-title')
+if __name__ == "__main__":
+    page_size = 100
+    product_type = 'cider'
+    n_prods = get_number_of_products(product_type)
+    n_pages = get_number_of_pages(n_prods, page_size)
 
-    print([ p.a.attrs['href'] for p in products ])
-    print(f'Number of products: {len(product_soup)}')
+    products = []
+    for page in range(n_pages):
+        data = build_data_payload(product_type, page, page_size)
+        response = requests.post(INDEX_URL, data=data)
+        soup = bs4.BeautifulSoup(response.text, 'html.parser')
 
+        product_soup = soup.find_all(class_='product-title')
+
+        print([ p.a.attrs['href'] for p in products ])
+        print(f'Number of products: {len(product_soup)}')
