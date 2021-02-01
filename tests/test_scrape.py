@@ -1,6 +1,9 @@
-import bs4
+from anbl_scraper.utils.scrape_utils import get_product_attrs
 
+def test_attrs_extract(sample_soup):
+    raw_attrs = get_product_attrs(sample_soup)
 
-def test_get_soup(sample_page):
-    soup = bs4.BeautifulSoup(sample_page, "html.parser")
-    assert True
+    assert raw_attrs["Alcohol content"] == "5.0%"
+    assert raw_attrs["Quantity per container"] == "12"
+    assert raw_attrs["Container Size"] == "341 mL"
+    assert raw_attrs["Country of origin"] == "Canada"
