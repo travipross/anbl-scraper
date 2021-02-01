@@ -12,17 +12,25 @@ def main():
 
 
 def anbl_csv_writer(data, filename):
-    with open(filename, 'w') as ff:
-        writer = csv.writer(ff, delimiter=",", quotechar="|", )
-        writer.writerow(["Category",
-                         "Product",
-                         "Volume (mL)",
-                         "ABV (%)",
-                         "qty",
-                         "Current Price ($)",
-                         "Regular Price ($)",
-                         "mL / $",
-                         "mL / $ (sale)"])
+    with open(filename, "w") as ff:
+        writer = csv.writer(
+            ff,
+            delimiter=",",
+            quotechar="|",
+        )
+        writer.writerow(
+            [
+                "Category",
+                "Product",
+                "Volume (mL)",
+                "ABV (%)",
+                "qty",
+                "Current Price ($)",
+                "Regular Price ($)",
+                "mL / $",
+                "mL / $ (sale)",
+            ]
+        )
 
         for cat in data["product_categories"]:
             for prod in cat["product"]:
@@ -36,7 +44,7 @@ def anbl_csv_writer(data, filename):
                     prod.get("price_regular"),
                     prod.get("ml_alc_per_dollar"),
                     prod.get("ml_alc_per_dollar_sale"),
-                    ]
+                ]
                 writer.writerow(row)
 
 

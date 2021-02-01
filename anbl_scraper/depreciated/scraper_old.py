@@ -30,7 +30,9 @@ print("%d products queued" % n)
 workers_list = []
 t_start = time.time()
 for i in range(N_WORKERS):
-    workers_list.append(Thread(target=url_scraper_worker, args=(q, i, stats), name="worker%d" % i))
+    workers_list.append(
+        Thread(target=url_scraper_worker, args=(q, i, stats), name="worker%d" % i)
+    )
     workers_list[i].start()
     q.put([None, None])
 
@@ -40,26 +42,26 @@ while not q.empty():
     if q.qsize() <= 10:
         print("Workers remaining: %s" % [t.name for t in workers_list if t.is_alive()])
     if AUTOSAVE:
-        with open(output_name, 'w') as f:
+        with open(output_name, "w") as f:
             json.dump(data, f, indent=4)
         print("Results saved to %s" % output_name)
     time.sleep(STATUS_PERIOD)
 
 # print statistics about scraping session
 t_end = time.time()
-elapsed = t_end-t_start
-print("-"*80)
+elapsed = t_end - t_start
+print("-" * 80)
 print("%d/%d products had complete data" % ((n - stats["failed"]), n))
 print("Time elapsed: %d seconds" % elapsed)
-print("%.2f pages scraped per minute" % (n/elapsed))
-print("%.2f seconds per page per worker" % (elapsed/n*N_WORKERS))
+print("%.2f pages scraped per minute" % (n / elapsed))
+print("%.2f seconds per page per worker" % (elapsed / n * N_WORKERS))
 
 # join workers and wait for job to finish before saving to disk
 for w in workers_list:
     w.join()
 
 # save final results to file
-with open(output_name+".json", 'w') as f:
+with open(output_name + ".json", "w") as f:
     json.dump(data, f, indent=4)
 
-anbl_csv_writer(data, output_name+".csv")
+anbl_csv_writer(data, output_name + ".csv")

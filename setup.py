@@ -5,7 +5,7 @@ setup(
     version="0.0.1",
     packages=find_packages(),
     install_requires=[
-        'beautifulsoup4',
-        'requests',
-    ]
+        "beautifulsoup4",
+        "requests",
+    ],
 )
