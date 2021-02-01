@@ -2,7 +2,8 @@ from anbl_scraper import INDEX_URL, SORT_MODES, CATEGORY_IDS
 import requests
 import bs4
 from concurrent.futures import ThreadPoolExecutor
-import time
+import csv
+import os
 
 
 def build_data_payload(category, page, page_size, sort_mode=SORT_MODES["name"]):
@@ -43,7 +44,7 @@ def get_number_of_pages(n_products, page_size):
 def extract_product_info(product_list_element, product_type=None):
     info = product_list_element.a.attrs
     info["link"] = info.pop("href")
-    info["name"] = info.pop("title")
+    info["name"] = info.pop("title").replace("\t", "")
     info["category"] = product_type
     return info
 
@@ -79,13 +80,29 @@ def fetch_products_threaded(category, page_size, n_prods, max_workers=20):
     return [p for r in res for p in r]
 
 
-if __name__ == "__main__":
-    page_size = 20
+def write_product_link_csv(outpath, products):
+    with open(os.path.expanduser(outpath), "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=products[0].keys())
+        writer.writeheader()
+        writer.writerows(products)
 
+
+def main():
+    page_size = 20
+    products = []
     for product_type in CATEGORY_IDS.keys():
         n_prods = get_number_of_products(product_type)
-        n_pages = get_number_of_pages(n_prods, page_size)
         product_list = fetch_products_threaded(
             product_type, page_size, n_prods, max_workers=100
         )
         print(f"Number of {product_type} products: {len(product_list)}")
+        products.extend(product_list)
+
+    if products:
+        write_product_link_csv("~/Desktop/test.csv", products)
+    else:
+        print("Can't save to file as no products were returned")
+
+
+if __name__ == "__main__":
+    main()
