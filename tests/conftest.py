@@ -1,6 +1,7 @@
 import pytest
 import os
 import bs4
+from anbl_scraper.models import Product
 
 
 def load_page(test_resources_dir, page_name):
@@ -88,3 +89,12 @@ def sample_product_list():
             "category": "beer",
         },
     ]
+
+
+@pytest.fixture
+def sample_product():
+    return Product(
+        name="13 Barrels Brewing Miss Clara's Kolsch 473ml",
+        link="https://www.anbl.com/beer/13-barrels-brewing-miss-clara-s-kolsch-473ml-34918",
+        category="beer",
+    )
