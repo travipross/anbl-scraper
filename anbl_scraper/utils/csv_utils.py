@@ -7,3 +7,9 @@ def write_product_link_csv(outpath, products):
         writer = csv.DictWriter(f, fieldnames=products[0].keys())
         writer.writeheader()
         writer.writerows(products)
+
+
+def read_product_link_csv(inpath):
+    with open(os.path.expanduser(inpath), newline="") as f:
+        reader = csv.DictReader(f)
+        return list(map(dict, reader))

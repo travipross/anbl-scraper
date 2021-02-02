@@ -1,5 +1,6 @@
 from anbl_scraper.utils.scrape_utils import get_product_attrs
 
+
 def test_attrs_extract(sample_soup):
     raw_attrs = get_product_attrs(sample_soup)
 
