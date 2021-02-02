@@ -2,10 +2,10 @@ from anbl_scraper.utils.scrape_utils import get_product_attrs
 
 
 def test_attrs_extract(sample_soup):
-    raw_attrs = get_product_attrs(sample_soup)
+    attrs = get_product_attrs(sample_soup)
 
-    assert raw_attrs["Alcohol content"] == "5.0%"
-    assert raw_attrs["Quantity per container"] == "12"
-    assert raw_attrs["Container Size"] == "341 mL"
-    assert raw_attrs["Country of origin"] == "Canada"
-    assert raw_attrs["reg_price"] == "$25.49"
+    assert attrs["abv_prct"] == 5.0
+    assert attrs["quantity_per_container"] == 12
+    assert attrs["container_size_ml"] == 341
+    assert attrs["country_of_origin"] == "Canada"
+    assert attrs["price_reg"] == 25.49

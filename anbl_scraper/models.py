@@ -1,10 +1,12 @@
 import requests
 import bs4
+import datetime
 from anbl_scraper.utils.scrape_utils import get_product_attrs
 
 
 class Product:
-    META_KEYS = [
+    REQUIRED_ATTRS = ["name", "link", "category"]
+    META_ATTRS = [
         "abv_prct",
         "quantity_per_container",
         "container_size_ml",
@@ -13,7 +15,7 @@ class Product:
         "price_sale",
     ]
 
-    def __init__(self, name, link, category, **kwargs):
+    def __init__(self, *, name, link, category, **kwargs):
         self.name = name
         self.link = link
         self.category = category
@@ -23,6 +25,7 @@ class Product:
         self.country_of_origin = kwargs.get("country_of_origin")
         self.price_reg = kwargs.get("price_reg")
         self.price_sale = kwargs.get("price_sale")
+        self.last_refreshed = None
         self.cached_page = None
 
     @classmethod
@@ -30,22 +33,24 @@ class Product:
         return cls(**d)
 
     def to_dict(self):
-        return vars(self)
+        return {k: getattr(self, k) for k in (self.META_ATTRS + self.REQUIRED_ATTRS)}
 
-    def fetch_product_page(self, force_refresh=False):
-        if force_refresh or not self.cached_page:
-            resp = requests.get(self.link)
-            if resp.status_code == 200:
+    def fetch_product_page(self, cache=False):
+        resp = requests.get(self.link)
+        if resp.status_code == 200:
+            if cache:
                 self.cached_page = resp.text
-        return self.cached_page
+            return resp.text
 
-    def fetch_product_soup(self, force_refresh=False):
-        return bs4.BeautifulSoup(
-            self.fetch_product_page(force_refresh=force_refresh), "html.parser"
-        )
+    def fetch_product_soup(self, cache=False):
+        return bs4.BeautifulSoup(self.fetch_product_page(cache=cache), "html.parser")
 
-    def refresh_metadata(self):
-        meta = get_product_attrs(self.fetch_product_soup(force_refresh=True))
-        for key in self.META_KEYS:
+    def refresh_metadata(self, cache=False):
+        meta = get_product_attrs(self.fetch_product_soup(cache))
+        for key in self.META_ATTRS:
             if meta.get(key):
                 setattr(self, key, meta.get(key))
+        self.last_refreshed = datetime.datetime.now()
+
+    def __repr__(self):
+        return f"<class 'Product(name={self.name}, category={self.category}'>"
