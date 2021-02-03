@@ -46,7 +46,7 @@ def extract_product_info(product_list_element, product_type=None):
     return info
 
 
-def page_fetcher_factory(product_type, page_size):
+def fetch_func_factory(product_type, page_size):
     def fetcher(page):
         raw = get_products_ajax(product_type, page, page_size)
         soup = bs4.BeautifulSoup(raw, "html.parser")

@@ -3,17 +3,17 @@ from anbl_scraper.utils.csv_utils import write_product_link_csv
 from anbl_scraper.utils.ajax_utils import (
     get_number_of_pages,
     get_number_of_products,
-    page_fetcher_factory,
+    fetch_func_factory,
 )
 from concurrent.futures import ThreadPoolExecutor
 import argparse
 import os
 
-
+#TODO: Fetch products as model.Product objects.
 def fetch_products_threaded(category, page_size, max_workers=20, dry_run=False):
     n_prods = get_number_of_products(category)
     n_pages = get_number_of_pages(n_prods, page_size)
-    fetch_func = page_fetcher_factory(category, page_size)
+    fetch_func = fetch_func_factory(category, page_size)
 
     page_range = [1] if dry_run else range(1, n_pages + 1)
 
