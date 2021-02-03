@@ -75,7 +75,7 @@ def main():
     parser.add_argument(
         "--dry-run",
         action="store_true",
-        help="Scrape a single page of results and don't save to CSV.",
+        help="Scrape a single page of product results and don't save to CSV.",
     )
     args = parser.parse_args()
 

@@ -8,9 +8,10 @@ setup(
         "beautifulsoup4",
         "requests",
     ],
-    entry_points = {
+    entry_points={
         "console_scripts": [
-            'anbl-crawl = anbl_scraper.crawl:main'
+            "anbl-crawl = anbl_scraper.crawl:main",
+            "anbl-scrape = anbl_scraper.scrape:main",
         ]
-    }
+    },
 )
