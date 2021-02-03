@@ -1,9 +1,26 @@
 import csv
 import os
+import datetime
 
 
 def write_product_link_csv(outpath, products):
-    with open(os.path.expanduser(outpath), "w", newline="") as f:
+    outfile = os.path.expanduser(outpath)
+
+    # if no extension, assume directory was provided
+    _, ext = os.path.splitext(outfile)
+    if not ext:
+        outfile = os.path.join(
+            outfile, datetime.datetime.now().strftime("crawl_%Y-%m-%d_%H-%M-%S.csv")
+        )
+
+    # Create directory if it doesn't exist
+    outdir = os.path.dirname(outfile)
+    if not os.path.exists(outdir):
+        os.makedirs(outdir)
+
+    # Create file and write CSV
+    print(f"Writing products to file: {outfile}")
+    with open(outfile, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=products[0].keys())
         writer.writeheader()
         writer.writerows(products)
