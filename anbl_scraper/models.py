@@ -13,6 +13,7 @@ class Product:
         "country_of_origin",
         "price_reg",
         "price_sale",
+        "last_updated",
     ]
 
     def __init__(self, *, name, link, category, **kwargs):
@@ -25,7 +26,7 @@ class Product:
         self.country_of_origin = kwargs.get("country_of_origin")
         self.price_reg = kwargs.get("price_reg")
         self.price_sale = kwargs.get("price_sale")
-        self.last_refreshed = None
+        self.last_updated = None
         self.cached_page = None
 
     @classmethod
@@ -40,17 +41,20 @@ class Product:
         if resp.status_code == 200:
             if cache:
                 self.cached_page = resp.text
-            return resp.text
+        else:
+            print(f"Error fetching page: {resp.status_code}")
+        
+        return resp.text
 
     def fetch_product_soup(self, cache=False):
         return bs4.BeautifulSoup(self.fetch_product_page(cache=cache), "html.parser")
 
-    def refresh_metadata(self, cache=False):
+    def update_metadata(self, cache=False):
         meta = get_product_attrs(self.fetch_product_soup(cache))
         for key in self.META_ATTRS:
             if meta.get(key):
                 setattr(self, key, meta.get(key))
-        self.last_refreshed = datetime.datetime.now()
+        self.last_updated = datetime.datetime.now()
 
     def __repr__(self):
         return f"<class 'Product(name={self.name}, category={self.category}'>"

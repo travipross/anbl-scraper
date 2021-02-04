@@ -8,7 +8,7 @@ from anbl_scraper.utils.ajax_utils import (
 from tqdm.contrib.concurrent import thread_map
 import argparse
 
-#TODO: Fetch products as model.Product objects.
+# TODO: Fetch products as model.Product objects.
 def fetch_products_threaded(category, page_size, max_workers=20, dry_run=False):
     n_prods = get_number_of_products(category)
     n_pages = get_number_of_pages(n_prods, page_size)
@@ -51,18 +51,21 @@ def crawl(output_path="~/Downloads", page_size=20, categories=None, dry_run=Fals
 
 
 def main():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        description="Crawls ANBL's website for product URLs and saves to a CSV.",
+        epilog="Enjoy responsibly.",
+    )
     parser.add_argument(
         "-o",
         "--output-path",
         default="~/Downloads",
-        help="Path to output file or directory.",
+        help="Path to output file or directory. Default: %(default)s",
     )
     parser.add_argument(
         "-p",
         "--page-size",
         default=20,
-        help="Number of product results to fetch per request.",
+        help="Number of product results to fetch per request. Default: %(default)s",
     )
     parser.add_argument(
         "-c",
