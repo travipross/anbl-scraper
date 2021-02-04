@@ -15,3 +15,13 @@ SUB_CATEGORY_IDS = {
     "cider": "eyJRdWlja1NlYXJjaFN0cmluZyI6bnVsbCwiS2V5d29yZCI6bnVsbCwiQnJhbmQiOm51bGwsIkNhdGVnb3J5IjoiMmUzY2E3NDYtOWE5My00MTM1LWE2MDEtZWExN2QyOTFhNDIwIiwiU3VwcGxpZXIiOm51bGwsIlNlYXJjaEluIjpudWxsLCJDcml0ZXJpYSI6bnVsbCwiUGFnZU51bWJlckZyb20iOjEsIlBhZ2VOdW1iZXJUbyI6MSwiVXNlclJlc3VsdFBlclBhZ2UiOjQ4LCJJZFByb21vdGlvbkZyb20iOiIwMDAwMDAwMC0wMDAwLTAwMDAtMDAwMC0wMDAwMDAwMDAwMDAiLCJQb3dlclNlYXJjaEZpbHRlcnMiOiIifQ==",
     "coolers": "eyJRdWlja1NlYXJjaFN0cmluZyI6bnVsbCwiS2V5d29yZCI6bnVsbCwiQnJhbmQiOm51bGwsIkNhdGVnb3J5IjoiYTE3N2QzNTctZTAyZi00YWIzLWFjNmMtMzYwYjg3Njg1ZGIzIiwiU3VwcGxpZXIiOm51bGwsIlNlYXJjaEluIjpudWxsLCJDcml0ZXJpYSI6bnVsbCwiUGFnZU51bWJlckZyb20iOjEsIlBhZ2VOdW1iZXJUbyI6MSwiVXNlclJlc3VsdFBlclBhZ2UiOjI0LCJJZFByb21vdGlvbkZyb20iOiIwMDAwMDAwMC0wMDAwLTAwMDAtMDAwMC0wMDAwMDAwMDAwMDAiLCJQb3dlclNlYXJjaEZpbHRlcnMiOiIifQ==",
 }
+
+CSV_HEADER_CRAWL = ["name", "link", "category"]
+CSV_HEADER_SCRAPE = CSV_HEADER_CRAWL + [
+    "abv_prct",
+    "quantity_per_container",
+    "container_size_ml",
+    "price_reg",
+    "price_sale",
+    "last_updated",
+]
