@@ -4,6 +4,7 @@ setup(
     name="anbl_scraper",
     version="0.0.1",
     packages=find_packages(),
+    python_requires='>=3.2',
     install_requires=[
         "beautifulsoup4",
         "requests",
