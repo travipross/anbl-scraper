@@ -45,7 +45,7 @@ def crawl(output_path="~/Downloads", page_size=20, categories=None, dry_run=Fals
             for p in products:
                 print(p)
         else:
-            write_product_link_csv(output_path, products, extended=False)
+            write_product_link_csv(output_path, products, listing_type="crawl")
     else:
         print("Can't save to file as no products were returned")
 
@@ -72,7 +72,8 @@ def main():
         "--categories",
         nargs="+",
         default=None,
-        help="Space-separated list of categories of product results to crawl.",
+        choices=list(CATEGORY_IDS.keys()),
+        help=f"Space-separated list of categories of product results to crawl.",
     )
     parser.add_argument(
         "--dry-run",
