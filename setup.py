@@ -7,6 +7,7 @@ setup(
     install_requires=[
         "beautifulsoup4",
         "requests",
+        "tqdm",
     ],
     entry_points={
         "console_scripts": [

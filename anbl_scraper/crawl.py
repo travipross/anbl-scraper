@@ -5,9 +5,8 @@ from anbl_scraper.utils.ajax_utils import (
     get_number_of_products,
     fetch_func_factory,
 )
-from concurrent.futures import ThreadPoolExecutor
+from tqdm.contrib.concurrent import thread_map
 import argparse
-import os
 
 #TODO: Fetch products as model.Product objects.
 def fetch_products_threaded(category, page_size, max_workers=20, dry_run=False):
@@ -17,8 +16,7 @@ def fetch_products_threaded(category, page_size, max_workers=20, dry_run=False):
 
     page_range = [1] if dry_run else range(1, n_pages + 1)
 
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        res = executor.map(fetch_func, page_range)
+    res = thread_map(fetch_func, page_range, max_workers=max_workers)
 
     return [p for r in res for p in r]
 
@@ -34,10 +32,11 @@ def crawl(output_path="~/Downloads", page_size=20, categories=None, dry_run=Fals
     products = []
     print(f"Fetching {page_size} products at a time per thread...")
     for product_type in categories:
+        print(f"Crawling {product_type} results for product URLs...")
         product_list = fetch_products_threaded(
             product_type, page_size, max_workers=100, dry_run=dry_run
         )
-        print(f"Number of {product_type} products: {len(product_list)}")
+        print(f"Number of {product_type} products found: {len(product_list)}")
         products.extend(product_list)
 
     if len(products):
@@ -46,7 +45,7 @@ def crawl(output_path="~/Downloads", page_size=20, categories=None, dry_run=Fals
             for p in products:
                 print(p)
         else:
-            write_product_link_csv(output_path, products)
+            write_product_link_csv(output_path, products, extended=False)
     else:
         print("Can't save to file as no products were returned")
 
