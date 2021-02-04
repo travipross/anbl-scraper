@@ -43,7 +43,7 @@ class Product:
                 self.cached_page = resp.text
         else:
             print(f"Error fetching page: {resp.status_code}")
-        
+
         return resp.text
 
     def fetch_product_soup(self, cache=False):
