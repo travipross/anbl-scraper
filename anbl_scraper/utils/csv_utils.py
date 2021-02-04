@@ -32,7 +32,7 @@ def write_product_link_csv(outpath, products, listing_type="crawl"):
             fieldnames=(
                 CSV_HEADER_SCRAPE if listing_type == "scrape" else CSV_HEADER_CRAWL
             ),
-            extrasaction="ignore"
+            extrasaction="ignore",
         )
         writer.writeheader()
         writer.writerows(products)
