@@ -42,3 +42,14 @@ def read_product_link_csv(inpath):
     with open(os.path.expanduser(inpath), newline="") as f:
         reader = csv.DictReader(f)
         return list(map(dict, reader))
+
+
+def sillify(products):
+    for product in products:
+        if "Bud Light" in product.name:
+            product.name = product.name.replace("Bud Light", "Bud Jr.")
+        if "Budweiser" in product.name:
+            product.name = product.name.replace("Budweiser", "Bud Heavy")
+        if "Coors Light" in product.name:
+            product.name = product.name.replace("Coors Light", "Literal Cat Piss")
+    return products
