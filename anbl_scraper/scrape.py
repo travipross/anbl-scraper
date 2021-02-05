@@ -1,10 +1,16 @@
 import argparse
-from anbl_scraper.utils.csv_utils import read_product_link_csv, write_product_link_csv
+from anbl_scraper.utils.csv_utils import (
+    read_product_link_csv,
+    write_product_link_csv,
+    sillify,
+)
 from anbl_scraper.models import Product
 from tqdm.contrib.concurrent import process_map, thread_map
 
 
-def scrape(input_path, output_path="~/Downloads", max_workers=20, sample_size=None):
+def scrape(
+    input_path, output_path="~/Downloads", max_workers=20, sample_size=None, silly=None
+):
     # Read products from input csv
     prod_dicts = read_product_link_csv(input_path)
     products = list(map(Product.from_dict, prod_dicts))
@@ -16,6 +22,9 @@ def scrape(input_path, output_path="~/Downloads", max_workers=20, sample_size=No
     # Uses concurrent.futures.TheadPoolExecutor.map() to fetch results
     print(f"Scraping metadata for {len(products)} products.")
     thread_map(lambda p: p.update_metadata(), products, max_workers=max_workers)
+
+    if silly:
+        products = sillify(products)
 
     # Write to file
     write_product_link_csv(
@@ -47,6 +56,12 @@ def main():
         type=int,
         help="If provided, scape only the first N items from the CSV.",
     )
+    parser.add_argument(
+        "-s",
+        "--silly",
+        type=bool,
+        help="Set True if you wanna get a bit silly with things",
+    )
     args = parser.parse_args()
 
     print(f"Running with args: {vars(args)}")
@@ -54,6 +69,7 @@ def main():
         input_path=args.input,
         output_path=args.output_path,
         sample_size=args.sample_size,
+        silly=args.silly,
     )
 
 

@@ -32,7 +32,7 @@ def write_product_link_csv(outpath, products, listing_type="crawl"):
             fieldnames=(
                 CSV_HEADER_SCRAPE if listing_type == "scrape" else CSV_HEADER_CRAWL
             ),
-            extrasaction="ignore"
+            extrasaction="ignore",
         )
         writer.writeheader()
         writer.writerows(products)
@@ -42,3 +42,14 @@ def read_product_link_csv(inpath):
     with open(os.path.expanduser(inpath), newline="") as f:
         reader = csv.DictReader(f)
         return list(map(dict, reader))
+
+
+def sillify(products):
+    for product in products:
+        if "Bud Light" in product.name:
+            product.name = product.name.replace("Bud Light", "Bud Jr.")
+        if "Budweiser" in product.name:
+            product.name = product.name.replace("Budweiser", "Bud Heavy")
+        if "Coors Light" in product.name:
+            product.name = product.name.replace("Coors Light", "Literal Cat Piss")
+    return products
