@@ -32,6 +32,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    if: github.base_ref == 'master' || github.ref == 'refs/heads/master' # run on commits and PRs to master branch
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.9
@@ -57,7 +58,7 @@ jobs:
   semantic-release:
     runs-on: ubuntu-latest
     environment: personal
-    if: github.base_ref == 'refs/heads/master' || github.ref == 'refs/heads/master' # run on commits and PRs to master branch
+    if: github.base_ref == 'master' || github.ref == 'refs/heads/master' # run on commits and PRs to master branch
     needs: 
       - lint
       - test
