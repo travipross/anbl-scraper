@@ -1,6 +1,6 @@
 # ANBL-SCRAPER #
 -----------------
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/travipross/anbl-scraper/Python%20Workflow) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/travipross/anbl-scraper) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/travipross/anbl-scraper/Python%20Workflow) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/travipross/anbl-scraper) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) ![GitHub issues](https://img.shields.io/github/issues/travipross/anbl-scraper) 
 
 Tools to crawl ANBL website to build a registry of individual product URLs, and to scrape metadata from each URL, extracting up-to-date information including pricing, volume, and quantity-per-container. 
 
